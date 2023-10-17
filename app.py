@@ -97,7 +97,7 @@ def lau():
 
 @app.route('/services/packing-and-moving')
 def pam():
-  response = app.make_response(render_template('home.html'))
+  response = app.make_response(render_template('packing-and-moving.html'))
   response.headers[
       'Cache-Control'] = 'public, max-age=3600'  # Example: Cache for 1 hour
   return response
