@@ -15,11 +15,22 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const menu = document.querySelector(".menu");
+  const menuToggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".menu");
 
-        menuToggle.addEventListener("click", function () {
-            menu.classList.toggle("active");
-        });
-
+    menuToggle.addEventListener("click", function () {
+        menu.classList.toggle("active");
     });
+  });
+function removeFlashMessage() {
+  var flashMessage = document.querySelector('.alert');
+  if (flashMessage) {
+      setTimeout(function () {
+          flashMessage.style.display = 'none';
+      }, 5000);  // 5 seconds (5000 milliseconds)
+  }
+}
+// Call the function when the page loads
+window.onload = removeFlashMessage;
+
+

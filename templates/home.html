@@ -3,6 +3,19 @@
 Home page
 {% endblock %}
 {% block content %}
+<div class="container">
+  <div class="flash-message text-center">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">
+          {{ message }}
+      </div>
+      {% endfor %}
+      {% endif %}
+      {% endwith %}
+  </div>
+</div>
 <div class="tc container-fluid d-none d-md-block">
   <div class=tcontainer>
     <img src="{{ url_for('static', filename='images/banner.jpg') }}" class="img-fluid"  alt="Banner">

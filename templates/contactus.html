@@ -3,42 +3,53 @@
 contact
 {% endblock %}
 {% block content %}
+<div class="flash-message">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">
+        {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+</div>
 <div class="container mt-5">
-    <h1 class="fw fs-2 mb-4 text-start">Contact Us</h1>
+  <h1 class="fw fs-2 mb-4 text-start">Contact Us</h1>
     <div class="row mb-3">
-        <div class="col-md-6 text-start">
-            <h2>Contact Information</h2>
-            <address>
-                <strong>Divakar Packers and Movers</strong><br>
-                D No. 28-5-587, Housing Board Colony<br>
-                Anantapur, Andhra Pradesh 515001.
-            </address>
-            <p><strong>Email:</strong> divakarpackersandmovers@gmail.com</p>
-            <p><strong>Phone:</strong> +91 9492201243</p>
-        </div>
-        <div class="col-md-6 text-start">
-            <h2>Contact Form</h2>
-            <form action="/submitcform" method="post">
-                <div class="form-group m-2">
-                    <label class="mt-2" for="cname">Name:</label>
-                    <input type="text" class="form-control" id="cname" name="cname" required>
-                </div>
-                <div class="form-group m-2">
-                    <label class="mt-2" for="cemail">Email:</label>
-                    <input type="email" class="form-control" id="cemail" name="cemail" required>
-                </div>
-                <div class="form-group m-2">
-                    <label class="mt-2"for="cmessage">Message:</label>
-                    <textarea class="form-control" id="cmessage" name="cmessage" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
+      <div class="col-md-6 text-start">
+          <h2>Contact Information</h2>
+          <address>
+              <strong>Divakar Packers and Movers</strong><br>
+              D No. 28-5-587, Housing Board Colony<br>
+              Anantapur, Andhra Pradesh 515001.
+          </address>
+          <p><strong>Email:</strong> divakarpackersandmovers@gmail.com</p>
+          <p><strong>Phone:</strong> +91 9492201243</p>
+      </div>
+      <div class="col-md-6 text-start">
+          <h2>Contact Form</h2>
+          <form action="/submitcform" method="post">
+              <div class="form-group m-2">
+                  <label class="mt-2" for="cname">Name:</label>
+                  <input type="text" class="form-control" id="cname" name="cname" required>
+              </div>
+              <div class="form-group m-2">
+                  <label class="mt-2" for="cemail">Email:</label>
+                  <input type="email" class="form-control" id="cemail" name="cemail" required>
+              </div>
+              <div class="form-group m-2">
+                  <label class="mt-2"for="cmessage">Message:</label>
+                  <textarea class="form-control" id="cmessage" name="cmessage" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+      </div>
     </div>
 </div>
-
-    <!-- Add Bootstrap JS and jQuery links here -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<!-- <script>
+    setTimeout(function () {
+        window.location.href = "{{ url_for('home') }}";
+    }, 10000); // 10 seconds (10000 milliseconds)
+</script> -->
 {% endblock %}

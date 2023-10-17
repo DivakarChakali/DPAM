@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, jsonify
+from flask import Flask, render_template, request, redirect, url_for, jsonify, flash
 from flask_mail import Mail, Message
 import os, re, _json, database
 # from database import get_user_details
@@ -19,7 +19,8 @@ app.config['MAIL_PASSWORD'] = os.environ[
 mail = Mail(app)
 
 
-@app.route('/')
+@app.route(
+    '/', )
 def home():
   response = app.make_response(render_template('home.html'))
   # response.headers[
@@ -153,7 +154,11 @@ def submitrform():
       database.insert_data(data)
       email_notification(name, email, phone, moving_date, origin, destination,
                          special_requests)
-      return redirect(url_for('thanks'))
+      # Flash a success message
+      flash("Your quotation request has been submitted successfully!",
+            "success")
+      return redirect(url_for('home'))
+      # return redirect(url_for('home'))
     except Exception as e:
       return f'Error: {str(e)}'
 
@@ -181,7 +186,10 @@ def submitcform():
     try:
       database.insert_data_details(cdata)
       send_email_notification(cname, cemail, cmessage)
-      return redirect(url_for('thanks'))
+      flash("Your contact request has been submitted successfully!", "success")
+
+      return redirect(url_for('home'))
+      # return redirect(url_for('thanks'))
     except Exception as e:
       return f'Error: {str(e)}'
 
