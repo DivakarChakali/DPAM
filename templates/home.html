@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+{% block title %}
+Home page
+{% endblock %}
+{% block content %}
+<div class="tc container-fluid d-none d-md-block">
+  <div class=tcontainer>
+    <img src="{{ url_for('static', filename='images/banner.jpg') }}" class="img-fluid"  alt="Banner">
+    <div class="bottom-right"><a href="https://www.freepik.com/free-vector/moving-service-workers-help-home-relocation_32883349.htm#query=packers%20and%20movers&position=29&from_view=keyword&track=ais" class="text-decoration-none text-body-tertiary fs-6.5 fw-lighter">Image by upklyak on Freepik</a>
+    </div>
+  </div>
+</div>
+<div class="umc container-fluid text-start mt-3">
+  <div class="c-quote d-block d-sm-none">
+  <h1 class="fs-3">Request a Quote</h1>
+  <form method="POST" action="/submitrform">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" required>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required>
+    </div>
+    <div>
+      <label for="phone">Phone:</label>
+      <input type="tel" name="phone" id="phone" pattern="[789][0-9]{9}" required>
+    </div>
+    <div>
+        <label for="moving_date">Moving Date:</label>
+        <input type="date" name="moving_date" id="moving_date" required>
+    </div>
+    <div>
+      <label for="origin">Origin:</label>
+      <input type="text" name="origin" id="origin" required>
+    </div>
+    <div>
+      <label for="destination">Destination:</label>
+      <input type="text" name="destination" id="destination" required>
+    </div>
+    <div>
+      <label for="special_requests">Special Requests:</label>
+      <textarea name="special_requests" id="special_requests"></textarea>
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+      <button type="submit" class="p-2 bg-danger text-white">Submit</button>
+      <h4 class="text-center m-0">or</h4>
+      <a class="text-center p-2 bg-primary text-white rounded" href="tel:9492201243">
+        +91 9492201243
+      </a>
+    </div>
+  </form>
+  {% if errors %}
+  <div class="error">
+    <ul class="list-group-item list-group-item-danger">
+      {% for error in errors %}
+      <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+  </div>
+  <div class="row">
+    <div class="col-lg-7 col-md-12 d-md-block">
+      <h2>Welcome to Divakar Packers and Movers</h2>
+        <div class="fs-5">
+          <p class="fs-6">
+            <span class="fs-5" >D</span>ivakar <span class="fs-5">P</span>ackers and <span class="fs-5">M</span>overs is the best and most skilled moving company in the industry of packaging and relocating. From several years, we emerged as the most efficient relocation provider in India, which offers remarkable services at affordable cost.
+          </p>
+          <p class="fs-6">
+            <span class="fs-5">W</span>e Believe that relocating is more than just relocating your possessions; it's a transformation in your life, and we at Divakar Packers and Movers are aware of this. With this knowledge, we approach every action we take with a tailored strategy. Our skilled team takes pride in handling your belongings with the respect they deserve, enabling a simple transition to your new location.
+          </p>
+        </div>
+      </div>
+      <div class="d-none d-lg-block col-md-5">
+        <div class=tcontainer>
+          <img class="container-fluid" src="{{ url_for('static', filename='images/sc.webp') }}" alt="">
+          <div class="bottom-right mr-3">
+            Image by <a href="https://www.freepik.com/free-vector/flat-design-house-moving-illustration-with-charaters_9905413.htm#query=packers%20and%20movers&position=6&from_view=keyword&track=ais">Freepik</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="mc container-fluid mb-4">
+  <div class="fs-2 mb-4 mt-4 text-center d-none d-md-block">
+      <span>Why Would Customer Choose Us & What Makes Us Unique?</span>
+  </div>
+  <div class="fs-2 mb-4 mt-4 d-flex justify-content-center d-block d-sm-none ">
+      <span>What Makes Us Unique?</span>
+  </div>
+  <div class="row">
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card service-card">
+        <div class="card-body">
+          <h5 class="card-title text-center">FREE VISIT</h5>
+          <p class="card-text">Book a free visit to provide a customized plan to ensure your move is hassle-free and smooth.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card service-card">
+        <div class="card-body">
+          <h5 class="card-title text-center">AFFORDABLE RATES</h5>
+          <p class="card-text">Our services are trustworthy , dependable and at the most affordable rates among competitors.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card service-card">
+        <div class="card-body">
+          <h5 class="card-title text-center">PROFESSIONAL CREWS</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card service-card">
+        <div class="card-body">
+          <h5 class="card-title text-center">FASTR DELIVERY</h5>
+          <p class="card-text">Get your home items delivered quickly and safely to your doorstep.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card service-card">
+        <div class="card-body">
+          <h5 class="card-title text-center">TRANSPARENCY</h5>
+          <p class="card-text">It is crucial for building strong relationships and trust between us and our clients. No hidden charges.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+      <div class="card service-card">
+        <div class="card-body">
+          <h5 class="card-title text-center">24/7 CUSTOMER SUPPORT</h5>
+          <p class="card-text">Receive customer help round-the-clock by phone, email.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends "layout.html"%}
+{% block title %}
+contact
+{% endblock %}
+{% block content %}
+<div class="container mt-5">
+  
+  <div class="accordion" id="faqAccordion">
+    <div class="card mb-2">
+      <div class="card-header" id="faqHeading1">
+        <h5 class="mb-0">
+          <a role="button" data-toggle="collapse" href="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1" class="question">
+            Q: How can I request a quote for my move?
+          </a>
+        </h5>
+      </div>
+      <div id="faqCollapse1" class="collapse" data-parent="#faqAccordion">
+        <div class="card-body">
+          A: To request a quote for your move, please fill out our <a href="{{url_for('requestquote')}}">quote request form</a> on our website, and our team will get back to you shortly.
+        </div>
+      </div>
+    </div>
+    <div class="card mb-2">
+      <div class="card-header" id="faqHeading2">
+        <h5 class="mb-0">
+          <a role="button" data-toggle="collapse" href="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2" class="question">
+            Q: What services do you provide?
+          </a>
+        </h5>
+      </div>
+      <div id="faqCollapse2" class="collapse" data-parent="#faqAccordion">
+        <div class="card-body">
+          A: We offer a wide range of moving services, including local and long-distance moves, packing and unpacking, storage, and more. Feel free to <a href="{{url_for('services')}}">explore our services</a> to learn more.
+        </div>
+      </div>
+    </div>
+    <div class="card mb-2">
+      <div class="card-header" id="faqHeading2">
+        <h5 class="mb-0">
+          <a role="button" data-toggle="collapse" href="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3" class="question">
+            Q: How do I book your services?
+          </a>
+        </h5>
+      </div>
+      <div id="faqCollapse3" class="collapse" data-parent="#faqAccordion">
+        <div class="card-body">
+          A: You can book our services by visiting our website and filling out the booking form. We will get in touch with you shortly.
+        </div>
+      </div>
+    </div>
+    <div class="card mb-2">
+      <div class="card-header" id="faqHeading4">
+        <h5 class="mb-0">
+          <a role="button" data-toggle="collapse" href="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4" class="question">
+            Q: What is the cost of your moving services?
+          </a>
+        </h5>
+      </div>
+      <div id="faqCollapse4" class="collapse" data-parent="#faqAccordion">
+        <div class="card-body">
+          A: The cost of our services depends on various factors such as the distance, the volume of items, and any additional services you may require. Contact us for a customized quote.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <h1>Frequently Asked Questions</h1>
+  <div class="faq">
+      <div class="faq-item">
+          <h4>Q: What services do you provide?</h4>
+          <div class="faq-answer">
+              <p>A: Divakar Packers and Movers offer a range of services, including office shifting, loading & unloading, packing & moving, pre-moving survey, and transportation services.<a href="{{url_for('services')}}">explore our services</a> to learn more.</p>
+          </div>
+      </div>
+      <div class="faq-item">
+          <h4>Q: How can I request a moving quote?</h4>
+          <div class="faq-answer">
+              <p>A: You can request a moving quote by filling out our online contact form, or you can call our customer service for assistance.</p>
+          </div>
+      </div>
+    <div class="faq-item">
+        <h4>Q: How do I book your services?</h4>
+        <div class="faq-answer">
+            <p>
+              A: You can book our services by visiting our website and filling out the booking form. We will get in touch with you shortly.
+            </p>
+        </div>
+    </div>
+    <div class="faq-item">
+        <h4>Q: What is the cost of your moving services?</h4>
+        <div class="faq-answer">
+            <p>
+              A: The cost of our services depends on various factors such as the distance, the volume of items, and any additional services you may require. Contact us for a customized quote.
+            </p>
+        </div>
+    </div>
+      <!-- Add more FAQ items here -->
+  </div>
+</div>
+{% endblock %}
