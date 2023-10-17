@@ -1,6 +1,7 @@
 body, ul, li {
   margin: 0;
   padding: 0;
+  margin:15px;
 }
 
 body {
@@ -13,13 +14,14 @@ body {
 }
 .logo img{
   border-radius:50%
+  
 }
 .limg{
-  height:28px;
+  height:50px;
 }
 
 .freespace{
-  height:60px;
+  height:75px;
 }
 /* Navbar styles */
 .navbar {
@@ -46,14 +48,11 @@ body {
   display: flex;
   margin:0
 }
-.menu li {
-  margin-right: 20px;
-}
 .menu a, .menu .dropdown {
   text-decoration: none;
   color: #333;
   font-size: 16px;
-  margin-inline-start:20px;
+  /* margin-inline-start:20px; */
 }
 /* Media query for responsive navbar */
 @media (max-width: 768px) {
@@ -83,6 +82,7 @@ body {
 
   .menu li {
     margin: 10px 0;
+    padding-inline-start: 25px;
   }
 }
 .header {
@@ -239,7 +239,7 @@ text-decoration:none
 }
 
 /* Footer styles */
-.footer {
+/* .footer {
   background-color: #6D676E;
   color: #fff;
   padding: 20px;
@@ -252,15 +252,16 @@ text-decoration:none
   flex: 1;
   max-width: 300px;
   text-align: start;
-  margin: 10px 10px 10px 0px;
+  margin: 10px 10px 10px 10px;
 }
 .footer-section h3,.UL-menu button, .US-menu button {
   font-size: 18px;
   display:block;
-  width:100%;
-  border-image: linear-gradient(to right, #000 9%, transparent 50%) 10%;
-  border-bottom: 2px solid white;
-  text-align:start;
+  width:100%; */
+  /* border-image: linear-gradient(to right, #000 20%, transparent 35%) 10%;
+  border-bottom: 2px solid white; */
+  /* text-align:start;
+  padding:initial;
   margin-bottom: revert;
 }
 .footer-section ul {
@@ -276,7 +277,7 @@ text-decoration:none
   color: #fff;
 }
 /* Media query for responsive footer on mobile devices */
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   .footer {
     flex-direction: column;
     align-items: start;
@@ -285,23 +286,23 @@ text-decoration:none
   .footer-section {
     min-width: 100%;
   }
-}
+} */
 
 .UL-Dropdown{
   display:block;
   width:100%
 }
 .UL-menu ,.US-menu{
-  background-color:none;
-  text-align: center;
-  border-radius:5px
+  text-align: justify;
+  padding-inline-start: 0px!important;
 }
-.ULM-toggle ,.USM-toggle{
+#ULM-toggle ,#USM-toggle{
   background-color: transparent;
   border: none;
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   cursor: pointer;
+  color: currentColor;
 }
 .UL-list,.US-list {
   list-style: none;
@@ -309,31 +310,34 @@ text-decoration:none
   display: none;
   background-color:#FBFBFF;
 }
-.UL-list li , .US-list li{
+/* .UL-list li , .US-list li{
   padding: 0 0 0 10px;
-}
+} */
 .UL-list a, .US-list a {
-  color: #fff;
+  color: currentColor!important;
   text-decoration: none;
   display: block;
   text-align:start;
-  color:gray
+}
+.UL-list a:hover, .US-list a:hover {
+  background-color:azure
 }
 @media (max-width: 768px) {
   .ULM-toggle,.USM-toggle {
       display: block;
   }
 
-  .UL-list, .US-list,.usefulServices,.usefulLinks {
+  .UL-list, .US-list,#usefulServices,#usefulLinks {
     display: none;
 
   }
 
   .UL-list.active, .US-list.active {
-      display: block;
+    display: block;
+    text-align: justify;
   }
 }
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .UL-menu, .US-menu{
   display:none
   }
@@ -343,6 +347,7 @@ text-decoration:none
     font-family: Arial, sans-serif;
     background-color: azure;
     display: flex;
+    color:black;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
@@ -386,10 +391,48 @@ text-decoration:none
     margin-top: 10px;
     color: #666;
   }
-a:-webkit-any-link{
-  text-decoration:none;
-  display: inline-block;
-}
 #aimg{
   border-radius:5px
+}
+#cp{
+  background-color: rgba(0, 0, 0, 0.05);
+}
+#hsimg{
+  max-height:90%;
+}
+@media (max-width:426px){
+  .cards{
+    margin: 10px 10px 10px 40px;
+  }
+}
+@media (max-width:376px){
+  .cards{
+    margin: 10px 10px 10px 20px;
+  }
+}
+@media (min-width:768px){
+  #container{
+    padding-inline-start:45px
+  }
+}
+@media (max-width:321px){
+  .cards{
+    margin: 10px auto;
+  }
+ }
+@media (min-width:819px){
+  #container{
+    padding-inline-start:20px
+  }
+}
+@media (min-width:392px){
+  .cards{
+    margin-inline-start:10px;
+  }
+  #container{
+    padding-inline-start:20px
+  }
+}
+.alink{
+  color:currentcolor;
 }

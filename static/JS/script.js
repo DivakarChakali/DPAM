@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const menuToggle = document.querySelector('.ULM-toggle');
+  const menuToggle = document.querySelector('#ULM-toggle');
   const menuList = document.querySelector('.UL-list');
 
   menuToggle.addEventListener('click', function() {
@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 document.addEventListener('DOMContentLoaded', function() {
-  const menuToggle = document.querySelector('.USM-toggle');
+  const menuToggle = document.querySelector('#USM-toggle');
   const menuList = document.querySelector('.US-list');
 
   menuToggle.addEventListener('click', function() {

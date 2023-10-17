@@ -25,7 +25,7 @@ def home():
   response = app.make_response(render_template('home.html'))
   # response.headers[
   #     'Cache-Control'] = 'public, max-age=3600'  # Example: Cache for 1 hour
-  response.headers['Cache-Control'] = 'max-age=3600'
+  response.headers['Cache-Control'] = 'max-age=180'
   return response
 
 
@@ -33,7 +33,7 @@ def home():
 def about():
   response = app.make_response(render_template('aboutus.html'))
   response.headers[
-      'Cache-Control'] = 'public, max-age=3600'  # Example: Cache for 1 hour
+      'Cache-Control'] = 'public, max-age=180'  # Example: Cache for 1 hour
   return response
 
 
@@ -41,7 +41,7 @@ def about():
 def contact():
   response = app.make_response(render_template('contactus.html'))
   response.headers[
-      'Cache-Control'] = 'public, max-age=3600'  # Example: Cache for 1 hour
+      'Cache-Control'] = 'public, max-age=180'  # Example: Cache for 1 hour
   return response
 
 
@@ -49,7 +49,7 @@ def contact():
 def faq():
   response = app.make_response(render_template('faq.html'))
   response.headers[
-      'Cache-Control'] = 'public, max-age=3600'  # Example: Cache for 1 hour
+      'Cache-Control'] = 'public, max-age=180'  # Example: Cache for 1 hour
   return response
 
 
@@ -57,7 +57,7 @@ def faq():
 def services():
   response = app.make_response(render_template('services.html'))
   response.headers[
-      'Cache-Control'] = 'max-age=3600'  # Example: Cache for 1 hour
+      'Cache-Control'] = 'max-age=180'  # Example: Cache for 1 hour
   return response
 
 
@@ -65,16 +65,16 @@ def services():
 def requestquote():
   response = app.make_response(render_template('requestquote.html'))
   response.headers[
-      'Cache-Control'] = 'public, max-age=3600'  # Example: Cache for 1 hour
+      'Cache-Control'] = 'public, max-age=180'  # Example: Cache for 1 hour
   return response
 
 
-@app.route('/services/domestic-shifting')
+@app.route('/services/household-shifting')
 def ds():
   response = app.make_response(
-      render_template('service/domestic-shifting.html'))
+      render_template('service/household-shifting.html'))
   response.headers[
-      'Cache-Control'] = 'public, max-age=3600'  # Example: Cache for 1 hour
+      'Cache-Control'] = 'public, max-age=180'  # Example: Cache for 1 hour
   return response
 
 

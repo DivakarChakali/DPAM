@@ -3,7 +3,6 @@
 our services
 {% endblock %}
 {% block content %}
-<link rel="stylesheet" href="{{url_for('static', filename='CSS/styles.css')}}">
 <h1 class="text-center">Our Services</h1>
 <div class="container">
   <p>
@@ -34,7 +33,7 @@ our services
   <a href="{{url_for('ds')}}">
     <div class="cards">
       <div>
-        <img src="{{url_for('static', filename='images/hs.jpg')}}" style="max-height:90%;" alt="Card Image">
+        <img id="hsimg"src="{{url_for('static', filename='images/hs.jpg')}}" alt="Card Image">
       </div>
       <div class="card-content">
         <h2 class="card-title">Household Shifting</h2>
