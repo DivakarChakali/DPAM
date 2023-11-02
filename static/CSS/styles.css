@@ -1,7 +1,10 @@
-body, ul, li {
+ul, li {
   margin: 0;
   padding: 0;
-  margin:15px;
+  margin:10px;
+} 
+.scards~a {
+    margin: 20px;
 }
 
 body {
@@ -17,11 +20,11 @@ body {
   
 }
 .limg{
-  height:50px;
+  height:40px;
 }
 
 .freespace{
-  height:75px;
+  height:70px;
 }
 /* Navbar styles */
 .navbar {
@@ -201,16 +204,16 @@ text-decoration:none
 }
 
 /* Custom styles for the card hover effect */
-.service-card {
+.u-card {
   transition: transform 0.2s;
 }
 
-.service-card:hover {
+.u-card:hover {
   transform: scale(1.05);
 }
 /* Responsive styles for smaller screens (e.g., mobile devices) */
 @media (max-width: 768px) {
-  .service-card {
+  .u-card {
     margin-bottom: 20px;
   }
 }
@@ -397,42 +400,43 @@ text-decoration:none
 #cp{
   background-color: rgba(0, 0, 0, 0.05);
 }
-#hsimg{
-  max-height:90%;
-}
-@media (max-width:426px){
-  .cards{
-    margin: 10px 10px 10px 40px;
-  }
-}
-@media (max-width:376px){
-  .cards{
-    margin: 10px 10px 10px 20px;
-  }
-}
-@media (min-width:768px){
-  #container{
-    padding-inline-start:45px
-  }
-}
-@media (max-width:321px){
-  .cards{
-    margin: 10px auto;
-  }
- }
-@media (min-width:819px){
-  #container{
-    padding-inline-start:20px
-  }
-}
-@media (min-width:392px){
-  .cards{
-    margin-inline-start:10px;
-  }
-  #container{
-    padding-inline-start:20px
-  }
-}
 .alink{
   color:currentcolor;
+}
+.div{
+  width:100%;
+}
+
+.service-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  width: 300px;
+  text-align: center;
+  transition: transform 0.2s;
+  border-radius:10px;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+.service-title {
+  font-size: 18px;
+  font-weight: bold;
+  padding: 5px 20px 20px 0px;
+}
+
+.service-description {
+  font-size: 14px;
+  color: #555;
+  padding: 0px 20px 20px 20px;
+}
+#scards {
+    background-color: #f0f0f0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
 }

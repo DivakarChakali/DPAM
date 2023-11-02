@@ -19,8 +19,7 @@ app.config['MAIL_PASSWORD'] = os.environ[
 mail = Mail(app)
 
 
-@app.route(
-    '/', )
+@app.route('/')
 def home():
   response = app.make_response(render_template('home.html'))
   # response.headers[
@@ -199,13 +198,30 @@ def send_email_notification(cname, cemail, cmessage):
   msg = Message(subject='contact request conformation', recipients=[cemail])
   msg.body = f"Name: {cname}\nEmail: {cemail}\nMessage: {cmessage}"
   mail.send(msg)
-  # return redirect(url_for('thanks'))
 
 
 def email_notification(name, email, phone, moving_date, origin, destination,
                        special_requests):
-  msg = Message(subject='Quotation request conformation', recipients=[email])
-  msg.body = f"Name: {name}\nEmail: {email}\nPhone: {phone}\nMoving date: {moving_date}\nOrigin: {origin}\nDestination: {destination}\nSpecial requests: {special_requests}"
+  msg = Message(subject='Acknowledgement from Divakarpackersandmover.com',
+                recipients=[email])
+  msg.html = render_template('mail.html', name=name)
+  mail.send(msg)
+  adminNotify(name, email, phone, moving_date, origin, destination,
+              special_requests)
+
+
+def adminNotify(name, email, phone, moving_date, origin, destination,
+                special_requests):
+  msg = Message(subject='Acknowledgement from Divakarpackersandmover.com',
+                recipients=['chdivakardiva192000@gmail.com'])
+  msg.html = render_template('am.html',
+                             name=name,
+                             email=email,
+                             phone=phone,
+                             moving_date=moving_date,
+                             orign=origin,
+                             destination=destination,
+                             special_requests=special_requests)
   mail.send(msg)
 
 
