@@ -14,7 +14,7 @@
         .header {
             background-color: #007BFF;
             color: #fff;
-            padding: 5px;
+            padding: 3px;
             text-align: center;
         }
         .message {
@@ -25,10 +25,10 @@
 <body>
     <div class="container">
         <div class="header">
-            <h2>Thank You for Your Request</h2>
+            <h2>New Quotation request received</h2>
         </div>
         <div class="message">
-            <p>Hello Admin,</p>
+            <p>Dear Admin,</p>
             <p>We have received a new request for our services. Kindly review user request and connect with user.</p>
             <p>Details of request:</p>
           <ul>
@@ -38,7 +38,9 @@
               <li><strong>Moving Date:</strong> {{ moving_date }}</li>
               <li><strong>Origin:</strong> {{ origin }}</li>
               <li><strong>Destination:</strong> {{ destination }}</li>
+            {% if special_requests %}
               <li><strong>Special Requests:</strong> {{ special_requests }}</li>
+            {% endif %}
           </ul>
         </div>
       <div> Thanks for your contineous support.</div>

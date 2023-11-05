@@ -1,11 +1,11 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify, flash
 from flask_mail import Mail, Message
 import os, re, _json, database
-# from database import get_user_details
 
 app = Flask(__name__)
 
 app.secret_key = os.environ['SECRETKEY']
+admail = os.environ['amail']
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
@@ -13,8 +13,7 @@ app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 app.config['MAIL_DEFAULT_SENDER'] = os.environ['DEFAULT_SENDER']
 app.config['MAIL_USERNAME'] = os.environ['username']
-app.config['MAIL_PASSWORD'] = os.environ[
-    'Password']  # Use an app password for security
+app.config['MAIL_PASSWORD'] = os.environ['Password']
 
 mail = Mail(app)
 
@@ -101,7 +100,6 @@ def pam():
   response.headers[
       'Cache-Control'] = 'public, max-age=3600'  # Example: Cache for 1 hour
   return response
-  return render_template('service/packing-and-moving.html')
 
 
 @app.route('/services/pre-moving-survey')
@@ -158,11 +156,8 @@ def submitrform():
       flash("Your quotation request has been submitted successfully!",
             "success")
       return redirect(url_for('home'))
-      # return redirect(url_for('home'))
     except Exception as e:
       return f'Error: {str(e)}'
-
-    return render_template('thanks.html')
 
 
 @app.route('/submitcform', methods=['POST'])
@@ -186,40 +181,58 @@ def submitcform():
     try:
       database.insert_data_details(cdata)
       send_email_notification(cname, cemail, cmessage)
+      # Flash a success message
       flash("Your contact request has been submitted successfully!", "success")
-
       return redirect(url_for('home'))
-      # return redirect(url_for('thanks'))
     except Exception as e:
       return f'Error: {str(e)}'
 
 
 def send_email_notification(cname, cemail, cmessage):
   msg = Message(subject='contact request conformation', recipients=[cemail])
-  msg.body = f"Name: {cname}\nEmail: {cemail}\nMessage: {cmessage}"
+  msg.html = render_template('EN/cmail.html',
+                             name=cname,
+                             email=cemail,
+                             message=cmessage)
   mail.send(msg)
+  adminNC(cname, cemail, cmessage)
 
 
 def email_notification(name, email, phone, moving_date, origin, destination,
                        special_requests):
   msg = Message(subject='Acknowledgement from Divakarpackersandmover.com',
                 recipients=[email])
-  msg.html = render_template('mail.html', name=name)
-  mail.send(msg)
-  adminNotify(name, email, phone, moving_date, origin, destination,
-              special_requests)
-
-
-def adminNotify(name, email, phone, moving_date, origin, destination,
-                special_requests):
-  msg = Message(subject='Acknowledgement from Divakarpackersandmover.com',
-                recipients=['chdivakardiva192000@gmail.com'])
-  msg.html = render_template('am.html',
+  msg.html = render_template('EN/rmail.html',
                              name=name,
                              email=email,
                              phone=phone,
                              moving_date=moving_date,
-                             orign=origin,
+                             origin=origin,
+                             destination=destination,
+                             special_requests=special_requests)
+  mail.send(msg)
+  adminNR(name, email, phone, moving_date, origin, destination,
+          special_requests)
+
+
+def adminNC(cname, cemail, cmessage):
+  msg = Message(subject='New contact request received', recipients=[admail])
+  msg.html = render_template('EN/amc.html',
+                             name=cname,
+                             email=cemail,
+                             message=cmessage)
+  mail.send(msg)
+
+
+def adminNR(name, email, phone, moving_date, origin, destination,
+            special_requests):
+  msg = Message(subject='New quotation request received', recipients=[admail])
+  msg.html = render_template('EN/amr.html',
+                             name=name,
+                             email=email,
+                             phone=phone,
+                             moving_date=moving_date,
+                             origin=origin,
                              destination=destination,
                              special_requests=special_requests)
   mail.send(msg)
