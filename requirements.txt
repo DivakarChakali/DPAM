@@ -3,3 +3,4 @@ gunicorn
 flask-mail
 pymysql
 sqlalchemy
+flask_wtf
