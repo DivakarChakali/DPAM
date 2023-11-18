@@ -9,10 +9,19 @@
   </title>
   <link rel="stylesheet" href="{{url_for('static',filename='CSS/styles.css')}}">
   <link rel="stylesheet" href="{{url_for('static',filename='CSS/bootstrap.min.css')}}">
-  <!-- <link rel="icon" type="image/x-icon" href="../images/logo.jpeg"> -->
   <link class="logo"rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.jpeg') }}">
-  <!-- <link class="logo"rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.png') }}"> -->
 <script src="{{url_for('static',filename='JS/script.js')}}" crossorigin="anonymous"></script>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0TRP34KX8N">
+</script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0TRP34KX8N');
+</script>
 </head>
 <body>
   <header class="header">

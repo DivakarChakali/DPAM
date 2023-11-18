@@ -3,6 +3,9 @@
 Home page
 {% endblock %}
 {% block content %}
+<head>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+</head>
 <div class="container">
   <div class="flash-message text-center">
       {% with messages = get_flashed_messages(with_categories=true) %}

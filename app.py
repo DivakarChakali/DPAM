@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify, flash
 from flask_mail import Mail, Message
 import os, re, _json, database
+from flask_wtf import FlaskForm
+from wtforms import SubmitField
+from flask_wtf.recaptcha import RecaptchaField
 
 app = Flask(__name__)
 
@@ -21,6 +24,7 @@ mail = Mail(app)
 @app.route('/')
 def home():
   response = app.make_response(render_template('home.html'))
+  
   # response.headers[
   #     'Cache-Control'] = 'public, max-age=3600'  # Example: Cache for 1 hour
   response.headers['Cache-Control'] = 'max-age=180'
@@ -118,7 +122,6 @@ def t():
       'Cache-Control'] = 'public, max-age=3600'  # Example: Cache for 1 hour
   return response
 
-
 @app.route('/submitrform', methods=['POST'])
 def submitrform():
   data = request.form
@@ -144,7 +147,12 @@ def submitrform():
     errors.append('Invalid phone number format')
   if not moving_date:
     errors.append('Moving date is required')
-
+    
+  form = CaptchaForm()
+  if form.validate_on_submit():
+      return "CAPTCHA validation successful!"
+  return render_template('home.html', form=form)
+  
   if errors:
     return render_template('home.html', errors=errors)
   else:
