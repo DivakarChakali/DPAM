@@ -8,7 +8,7 @@ from flask_wtf.recaptcha import RecaptchaField
 app = Flask(__name__)
 
 app.secret_key = os.environ['SECRETKEY']
-admail = os.environ['amail']
+admail = os.envirn['amail']
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
@@ -24,7 +24,7 @@ mail = Mail(app)
 @app.route('/')
 def home():
   response = app.make_response(render_template('home.html'))
-  
+
   # response.headers[
   #     'Cache-Control'] = 'public, max-age=3600'  # Example: Cache for 1 hour
   response.headers['Cache-Control'] = 'max-age=180'
@@ -122,6 +122,7 @@ def t():
       'Cache-Control'] = 'public, max-age=3600'  # Example: Cache for 1 hour
   return response
 
+
 @app.route('/submitrform', methods=['POST'])
 def submitrform():
   data = request.form
@@ -147,12 +148,7 @@ def submitrform():
     errors.append('Invalid phone number format')
   if not moving_date:
     errors.append('Moving date is required')
-    
-  form = CaptchaForm()
-  if form.validate_on_submit():
-      return "CAPTCHA validation successful!"
-  return render_template('home.html', form=form)
-  
+
   if errors:
     return render_template('home.html', errors=errors)
   else:
@@ -187,7 +183,7 @@ def submitcform():
     return render_template('home.html', errors=cerrors)
   else:
     try:
-      database.insert_data_details(cdata)
+      # database.insert_data_details(cdata)
       send_email_notification(cname, cemail, cmessage)
       # Flash a success message
       flash("Your contact request has been submitted successfully!", "success")

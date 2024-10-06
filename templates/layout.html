@@ -10,36 +10,61 @@
   <link rel="stylesheet" href="{{url_for('static',filename='CSS/styles.css')}}">
   <link rel="stylesheet" href="{{url_for('static',filename='CSS/bootstrap.min.css')}}">
   <link class="logo"rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.jpeg') }}">
-<script src="{{url_for('static',filename='JS/script.js')}}" crossorigin="anonymous"></script>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0TRP34KX8N">
 </script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('#ULM-toggle');
+    const menuList = document.querySelector('.UL-list');
 
-  gtag('config', 'G-0TRP34KX8N');
+    menuToggle.addEventListener('click', function() {
+      menuList.classList.toggle('active');
+    });
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('#USM-toggle');
+    const menuList = document.querySelector('.US-list');
+
+    menuToggle.addEventListener('click', function() {
+      menuList.classList.toggle('active');
+    });
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+      menuToggle.addEventListener("click", function () {
+          menu.classList.toggle("active");
+      });
+    });
+  function removeFlashMessage() {
+    var flashMessage = document.querySelector('.alert');
+    if (flashMessage) {
+        setTimeout(function () {
+            flashMessage.style.display = 'none';
+        }, 5000);  // 5 seconds (5000 milliseconds)
+    }
+  }
+  // Call the function when the page loads
+  window.onload = removeFlashMessage;
 </script>
 </head>
 <body>
   <header class="header">
     <nav class="navbar">
-        <div class="logo ms-3"><a href="{{url_for('home')}}"><img  class="limg"src="{{ url_for('static', filename='images/logo.jpeg') }}"  alt="logo."></a></div>
-        <div class="menu-toggle">&#9776;</div>
-        <ul class="menu">
+      <div class="logo ms-3"><a href="{{url_for('home')}}"><img  class="limg"src="{{ url_for('static', filename='images/logo.jpeg') }}"  alt="logo."></a></div>
+      <div class="menu-toggle">&#9776;</div>
+      <ul class="menu">
           <li><a href="{{url_for('home')}}">Home</a></li>
           <li class="d-none d-lg-block">
             <div class="dropdown">
-                <span class="dropdown-trigger">Services</span>
-                <div class="dropdown-content">
-                  <a href="{{url_for('pam')}}">Packing and Moving</a>
-                  <a href="{{url_for('ds')}}">Household Shifting</a>
-                  <a href="{{url_for('t')}}">Transportation</a>
-                  <a href="{{url_for('os')}}">Office Relocation</a>
-                  <a href="{{url_for('services')}}">View More</a>
-                </div>
+              <span class="dropdown-trigger">Services</span>
+              <div class="dropdown-content">
+                <a href="{{url_for('pam')}}">Packing and Moving</a>
+                <a href="{{url_for('ds')}}">Household Shifting</a>
+                <a href="{{url_for('t')}}">Transportation</a>
+                <a href="{{url_for('os')}}">Office Relocation</a>
+                <a href="{{url_for('services')}}">View More</a>
+              </div>
             </div>
           </li>
           <li class="d-block d-lg-none"><a href="{{url_for('services')}}">Services</a></li>
@@ -49,11 +74,11 @@
         </ul>
     </nav>
   </header>
-    <div class="freespace">
-    </div>
+
   <div class="container-fluid">
-    {% block content %}
-    {% endblock %}
+      {% block content %}
+      {% endblock %}
+  </div>
   </div>
   <footer class="text-center text-lg-start bg-light text-muted">
    <!-- Section: Links  -->
