@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, jsonify, flash
 from flask_mail import Mail, Message
-import os, re, _json, database
+import os, re, _json
 from flask_wtf import FlaskForm
 from wtforms import SubmitField
 from flask_wtf.recaptcha import RecaptchaField
