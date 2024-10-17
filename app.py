@@ -153,7 +153,7 @@ def submitrform():
     return render_template('home.html', errors=errors)
   else:
     try:
-      database.insert_data(data)
+      # database.insert_data(data)
       email_notification(name, email, phone, moving_date, origin, destination,
                          special_requests)
       # Flash a success message
