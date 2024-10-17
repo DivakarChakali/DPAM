@@ -7,16 +7,16 @@ from flask_wtf.recaptcha import RecaptchaField
 
 app = Flask(__name__)
 
-app.secret_key = os.environ['SECRETKEY']
-admail = os.envirn['amail']
+app.secret_key = os.environ.get('SECRETKEY')
+admail = os.environ.get('amail')
 
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_DEFAULT_SENDER'] = os.environ['DEFAULT_SENDER']
-app.config['MAIL_USERNAME'] = os.environ['username']
-app.config['MAIL_PASSWORD'] = os.environ['Password']
+app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('DEFAULT_SENDER')
+app.config['MAIL_USERNAME'] = os.environ.get('username')
+app.config['MAIL_PASSWORD'] = os.environ.get('Password')
 
 mail = Mail(app)
 
