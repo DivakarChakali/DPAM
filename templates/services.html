@@ -1,160 +1,143 @@
 {% extends "layout.html"%}
 {% block title %}
-our services
+Divakar Packers and Movers | services
 {% endblock %}
 {% block content %}
-<h1 class="text-center">Our Services</h1>
-<div class="container">
-  <p>
-    At Divakar Packers and Movers, we take pride in offering a comprehensive range of services to meet your relocation needs. With years of experience and a commitment to excellence, we ensure that your move is smooth and hassle-free.
-  </p>
-  <p>
-    <span class="fw-bold fs-6">Packing and Moving:</span> Our expert team handles every aspect of packing and moving. We use top-quality materials to protect your belongings during transit. Your move is our responsibility, and we execute it with precision.
-  </p>
-
-  <p>
-    <span class="fw-bold fs-6">Household Shifting:</span> Moving your household is a big task, and we're here to make it easier. Our professionals ensure that your cherished possessions are safely transported to your new home.
-  </p>
-  <p>
-    <span class="fw-bold fs-6">Loading and Unloading:</span> Heavy lifting and careful handling are our specialties. We load and unload your items with care, ensuring a safe journey to your new destination.
-  </p>
-  <p>
-    <span class="fw-bold fs-6">Transportation:</span> Our well-maintained fleet of vehicles can accommodate items of all sizes. We provide secure transportation to deliver your belongings to your new location.
-  </p>
-
-  <p>
-    <span class="fw-bold fs-6">Pre-Moving Survey:</span> Our pre-moving survey allows us to understand your unique requirements. We create a customized moving plan tailored to your specific needs.
-  </p>
-  <p>
-    <span class="fw-bold fs-6">Office Relocation:</span> Minimize business disruption with our office relocation services. We ensure a smooth transition, allowing you to focus on your business.
-  </p>
-</div>
-<div id="scards">
-  <a>
-    <div class="service-card">
-      <div class="service-img">
-       <img id="hsimg"src="{{url_for('static', filename='images/hs.jpg')}}" alt="Card Image" class="img-fluid">
-      </div>
-      <div class="service-title">Household Shifting</div>
-      <div class="service-description">We make moving easy and stress-free for your household.</div>
-    </div>
-  </a>
-  <a>
-    <div class="service-card">
-      <div class="service-img">
-        <img src="{{url_for('static', filename='images/os.jpg')}}" alt="Card Image" class="img-fluid">
-      </div>
-        <div class="service-title">Packing and Moving</div>
-        <div class="service-description">Our experts ensure safe packing and moving of your belongings.</div>
-    </div>
-  </a>
-  <a>
-    <div class="service-card">
-      <div class="service-img">
-       <img src="{{url_for('static', filename='images/lau.jpg')}}" alt="Card Image" class="img-fluid">
-      </div>
-        <div class="service-title">Pre-Moving Survey</div>
-        <div class="service-description">We assess your needs and create a customized moving plan.</div>
-    </div>
-   </a>
-  <a>
-    <div class="service-card">
-      <div class="service-img">
-        <img src="{{url_for('static', filename='images/pam.jpg')}}" alt="Card Image" class="img-fluid">
-      </div>
-      <div class="service-title">Loading and Unloading</div>
-      <div class="service-description">Efficient loading and unloading services for your items.</div>
-    </div>
-   </a>
-  <a>
-    <div class="service-card">
-      <div class="service-img">
-        <img src="{{url_for('static', filename='images/pms.jpg')}}" alt="Card Image" class="img-fluid">
-      </div>
-      <div class="service-title">Transportation</div>
-      <div class="service-description">Safe and secure transportation of your belongings.</div>
-    </div>
-  </a>
-  <a>
-    <div class="service-card">
-      <div class="service-img">
-        <img src="{{url_for('static', filename='images/t.jpg')}}" alt="Card Image" class="img-fluid">
-      </div>
-      <div class="service-title">Office Relocation</div>
-      <div class="service-description">We specialize in seamless office relocation services.</div>
-    </div>
-  </a>
-</div>
-<!-- <div id="container" class="rounded pb-3">
-  <a href="{{url_for('ds')}}">
-    <div class="cards">
-        <img id="hsimg"src="{{url_for('static', filename='images/hs.jpg')}}" alt="Card Image">
-      <div class="card-content">
-        <h2 class="card-title">Household Shifting</h2>
-        <p class="card-description">We make moving easy and stress-free for your household.</p>
-      </div>
-    </div>
-  </a>
-  <a href="{{url_for('os')}}">
-    <div class="cards">
-        <img src="{{url_for('static', filename='images/os.jpg')}}" alt="Card Image">
-      <div class="card-content">
-        <h2 class="card-title">Office Relocation</h2>
-        <p class="card-description">Efficient and secure office relocation services.</p>
-      </div>
-    </div>
-  </a>
-  <a href="{{url_for('lau')}}">
-    <div class="cards">
-      <img src="{{url_for('static', filename='images/lau.jpg')}}" alt="Card Image">
-      <div class="card-content">
-        <h2 class="card-title">Loading & Unloading</h2>
-        <p class="card-description">Professional packing and moving services.</p>
-      </div>
-    </div>
-  </a>
-  <a href="{{url_for('pam')}}">
-    <div class="cards">
-      <img src="{{url_for('static', filename='images/pam.jpg')}}" alt="Card Image">
-      <div class="card-content">
-        <h2 class="card-title">Packing & Moving</h2>
-        <p class="card-description">Professional packing and moving services.</p>
-      </div>
-    </div>
-  </a>
-  <a href="{{url_for('pms')}}">
-    <div class="cards">
-      <img src="{{url_for('static', filename='images/pms.jpg')}}" alt="Card Image">
-      <div class="card-content">
-        <h2 class="card-title">Pre-Moving Survey</h2>
-        <p class="card-description">Comprehensive pre-moving survey for a hassle-free experience.</p>
+<div class="container-fluid mb-4">
+  <section class="container-fluid" id="services">
+    <h2 class="text-center">
+      <a href="" class="section-links text-dark"> Our Services </a>
+    </h2>
+    <!--services info-->
+    <section>
+      <p>
+        At Divakar Packers and Movers, we take pride in offering a comprehensive
+        range of services to meet your relocation needs. With years of
+        experience and a commitment to excellence, we ensure that your move is
+        smooth and hassle-free.
+      </p>
+      <p>
+        <span class="fw-bold">Packing and Moving:</span> Our expert team handles
+        every aspect of packing and moving. We use top-quality materials to
+        protect your belongings during transit. Your move is our responsibility,
+        and we execute it with precision.
+      </p>
+      <p>
+        <span class="fw-bold">Household Shifting:</span> Moving your household
+        is a big task, and we're here to make it easier. Our professionals
+        ensure that your cherished possessions are safely transported to your
+        new home.
+      </p>
+      <p>
+        <span class="fw-bold">Loading and Unloading:</span> Heavy lifting and
+        careful handling are our specialties. We load and unload your items with
+        care, ensuring a safe journey to your new destination.
+      </p>
+      <p>
+        <span class="fw-bold">Transportation:</span> Our well-maintained fleet
+        of vehicles can accommodate items of all sizes. We provide secure
+        transportation to deliver your belongings to your new location.
+      </p>
+      <p>
+        <span class="fw-bold">Pre-Moving Survey:</span> Our pre-moving survey
+        allows us to understand your unique requirements. We create a customized
+        moving plan tailored to your specific needs.
+      </p>
+      <p>
+        <span class="fw-bold">Office Relocation:</span> Minimize business
+        disruption with our office relocation services. We ensure a smooth
+        transition, allowing you to focus on your business.
+      </p>
+    </section>
+    <!--service cards-->
+    <section>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <a class="text-decoration-none" href="{{url_for('pre_moving_survey')}}">
+            <div class="card h-100 cards border-2">
+              <img src="/static/images/pre-moving-survey-image.jpg" class="card-img-top" loading="lazy"
+                alt="pre-moving-survey image" />
+              <div class="card-body">
+                <h5 class="card-title text-center">Pre-Moving Survey</h5>
+                <div class="card-text text-center">
+                  We assess your needs and create a customized moving plan.
+                </div>
+              </div>
+            </div>
+          </a>
         </div>
-    </div>
-  </a>
-  <a href="{{url_for('t')}}">
-    <div class="cards">
-      <img src="{{url_for('static', filename='images/t.jpg')}}" alt="Card Image">
-      <div class="card-content">
-        <h2 class="card-title">Transportation</h2>
-        <p class="card-description">Efficient transportation options for your needs.</p>
+        <div class="col">
+          <a class="text-decoration-none" href="{{url_for('household_shifting')}}">
+            <div class="card h-100 cards border-2">
+              <img src="/static/images/household-shifting-image.jpg" class="card-img-top" loading="lazy"
+                alt="household-shifting image.">
+              <div class="card-body">
+                <h5 class="card-title text-center">Household Shifting</h5>
+                <p class="card-text text-center">
+                  We make moving easy and stress-free for your household.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="{{url_for('packing_moving')}}">
+            <div class="card h-100 cards border-2">
+              <img src="/static/images/packing-moving-image.jpg" class="card-img-top" loading="lazy"
+                alt="packing-moving image." />
+              <div class="card-body">
+                <h5 class="card-title text-center">Packing and Moving</h5>
+                <div class="card-text text-center">
+                  Our experts ensure safe packing and moving of your belongings.
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="{{url_for('office_relocation')}}">
+            <div class="card h-100 cards border-2">
+              <img src="/static/images/office-relocation-image.jpg" class="card-img-top" loading="lazy"
+                alt="office relocation image" />
+              <div class="card-body">
+                <h5 class="card-title text-center">Office-Relocation</h5>
+                <div class="card-text text-center">
+                  We specialize in seamless office relocation services.
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="{{url_for('loading_unloading')}}">
+            <div class="card h-100 cards border-2">
+              <img src="/static/images/loading-unloading-image.webp" class="card-img-top" loading="lazy"
+                alt="loading-unloading image" />
+              <div class="card-body">
+                <h5 class="card-title text-center">Loading and Unloading</h5>
+                <div class="card-text text-center">
+                  Efficient loading and unloading services for your items.
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="{{url_for('transportation')}}">
+            <div class="card h-100 cards border-2">
+              <img src="/static/images/transportation-image.jpg" class="card-img-top" loading="lazy"
+                alt="transportation image" />
+              <div class="card-body">
+                <h5 class="card-title text-center">Transportation</h5>
+                <div class="card-text text-center">
+                  Safe and secure transportation of your belongings.
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
       </div>
-    </div>
-  </a>
-</div> -->
-<div class="container mt-3">
-  <h4 class="fw-bold text-center">Why Choose Divakar Packers and Movers:</h4>
-  <p>
-    <span class="fw-bold fs-6">Professional Team:</span> Our skilled professionals prioritize the safety and security of your belongings.
-  </p>
-  <p>
-    <span class="fw-bold fs-6">Custom Solutions:</span> We understand that every move is unique. We create custom solutions to match your specific requirements and budget.
-  </p>
-  <p>
-    <span class="fw-bold fs-6">Affordability:</span> We offer competitive pricing without compromising on service quality.
-  </p>
-  <p>
-  <span class="fw-bold fs-6">Customer Satisfaction:</span> Your satisfaction is our top priority. We aim to make your move seamless and hassle-free.
-  <p>Divakar Packers and Movers is your trusted partner for all your relocation needs. We're committed to ensuring your belongings reach their destination safely and securely. Leave the heavy lifting to us and experience a stress-free move.</p>
-  <p>For inquiries or to schedule your move, please reach out to us today.</p>
+    </section>
+  </section>
 </div>
 {% endblock %}

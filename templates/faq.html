@@ -1,41 +1,61 @@
 {% extends "layout.html"%}
 {% block title %}
-contact
+Divakar Packers and Movers | Frequently Asked Questions
 {% endblock %}
 {% block content %}
-<div class="container mt-5">
-  <h1>Frequently Asked Questions</h1>
-  <div class="faq">
+<div class="container-fluid">
+    <h2 class="text-center pb-3">
+      <a class="text-dark">
+        Frequently Asked Questions
+      </a>
+    </h2>
+    <div class="faq">
       <div class="faq-item">
-          <h4>Q: What services do you provide?</h4>
-          <div class="faq-answer">
-              <p>A: Divakar Packers and Movers offer a range of services, including office shifting, loading & unloading, packing & moving, pre-moving survey, and transportation services.<a href="{{url_for('services')}}">explore our services</a> to learn more.</p>
-          </div>
+        <h4>Q: What services do you provide?</h4>
+        <div class="faq-answer">
+          <p>
+            A: Divakar Packers and Movers offer a range of services,
+            including office shifting, loading &amp; unloading,
+            packing &amp; moving, pre-moving survey, and
+            transportation services.<a href="/services.html"
+              >explore our services</a
+            >
+            to learn more.
+          </p>
+        </div>
       </div>
       <div class="faq-item">
-          <h4>Q: How can I request a moving quote?</h4>
-          <div class="faq-answer">
-              <p>A: You can request a moving quote by filling out our online contact <a href="{{url_for('requestquote')}}">form</a> , or you can call our customer service for assistance.</p>
-          </div>
+        <h4>Q: How can I request a moving quote?</h4>
+        <div class="faq-answer">
+          <p>
+            A: You can request a moving quote by filling out our
+            online contact <a href="/request-quote.html">form</a> ,
+            or you can call our customer service for assistance.
+          </p>
+        </div>
       </div>
-    <div class="faq-item">
+      <div class="faq-item">
         <h4>Q: How do I book your services?</h4>
         <div class="faq-answer">
-            <p>
-              A: You can book our services by visiting our website and filling out the booking form. We will get in touch with you shortly.
-            </p>
+          <p>
+            A: You can book our services by visiting our website and
+            filling out the booking form. We will get in touch with
+            you shortly.
+          </p>
         </div>
-    </div>
-    <div class="faq-item">
+      </div>
+      <div class="faq-item">
         <h4>Q: What is the cost of your moving services?</h4>
         <div class="faq-answer">
-            <p>
-              A: The cost of our services depends on various factors such as the distance, the volume of items, and any additional services you may require. Contact us for a customized quote.
-            </p>
+          <p>
+            A: The cost of our services depends on various factors
+            such as the distance, the volume of items, and any
+            additional services you may require. Contact us for a
+            customized quote.
+          </p>
         </div>
-    </div>
+      </div>
       <!-- Add more FAQ items here -->
-  </div>
+    </div>
 </div>
-
 {% endblock %}

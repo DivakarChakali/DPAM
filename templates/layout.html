@@ -1,196 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>
-    {% block title %}
-    {% endblock %}
-  </title>
-  <link rel="stylesheet" href="{{url_for('static',filename='CSS/styles.css')}}">
-  <link rel="stylesheet" href="{{url_for('static',filename='CSS/bootstrap.min.css')}}">
-  <link class="logo"rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.jpeg') }}">
-</script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('#ULM-toggle');
-    const menuList = document.querySelector('.UL-list');
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="description" content="Divakar Packers and Movers offers professional packing and moving services in Anantapur, Andhra Pradesh. We specialize in local and long-distance relocations, ensuring a hassle-free experience.">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="Packers and Movers Anantapur,Anantapur packers, Anantapur packers and movers, Packers and Movers near me, Movers and Packers, Divakar Packers and Movers Anantapur, Best Packers and Movers, Best Packers and Movers Anantapur">
+    <meta name="url" content="https://www.divakarpackersandmover.com/">
+    <link rel="stylesheet" href="{{url_for('static',filename='CSS/styles.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='CSS/bootstrap.min.css')}}">
+    <link class="logo"rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.jpeg') }}">
+    <script src="/static/JS/script.js"></script>
+  </head>
 
-    menuToggle.addEventListener('click', function() {
-      menuList.classList.toggle('active');
-    });
-  });
-  document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.querySelector('#USM-toggle');
-    const menuList = document.querySelector('.US-list');
-
-    menuToggle.addEventListener('click', function() {
-      menuList.classList.toggle('active');
-    });
-  });
-  document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const menu = document.querySelector(".menu");
-
-      menuToggle.addEventListener("click", function () {
-          menu.classList.toggle("active");
-      });
-    });
-  function removeFlashMessage() {
-    var flashMessage = document.querySelector('.alert');
-    if (flashMessage) {
-        setTimeout(function () {
-            flashMessage.style.display = 'none';
-        }, 5000);  // 5 seconds (5000 milliseconds)
-    }
-  }
-  // Call the function when the page loads
-  window.onload = removeFlashMessage;
-</script>
-</head>
-<body>
-  <header class="header">
-    <nav class="navbar">
-      <div class="logo ms-3"><a href="{{url_for('home')}}"><img  class="limg"src="{{ url_for('static', filename='images/logo.jpeg') }}"  alt="logo."></a></div>
-      <div class="menu-toggle">&#9776;</div>
-      <ul class="menu">
-          <li><a href="{{url_for('home')}}">Home</a></li>
-          <li class="d-none d-lg-block">
-            <div class="dropdown">
-              <span class="dropdown-trigger">Services</span>
-              <div class="dropdown-content">
-                <a href="{{url_for('pam')}}">Packing and Moving</a>
-                <a href="{{url_for('ds')}}">Household Shifting</a>
-                <a href="{{url_for('t')}}">Transportation</a>
-                <a href="{{url_for('os')}}">Office Relocation</a>
-                <a href="{{url_for('services')}}">View More</a>
+  <body>
+    <header class="fixed-top bg-light">
+      <div class="container-md p-0">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+          <div class="container-fluid">
+            <div class="container-fluid d-flex justify-content-between">
+              <a class="navbar-brand px-3" href="/"><img src="static/images/dpm-logo.jpg" alt="DPM navbar logo" style="height: 3em; border-radius: 50%"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="offcanvas offcanvas-end" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                  <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                    Divakar Packers and Movers
+                  </h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body p-2">
+             <ul class="navbar-nav justify-content-end flex-grow-1">
+                <li class="nav-item page-links">
+                  <a class="nav-link" href="/"> Home </a>
+                </li>
+                <li class="nav-item dropdown d-block d-lg-none">
+                  <a class="nav-link dropdown-toggle" href="/services" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Services
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item p-1" href="{{url_for('packing_moving')}}">Packing &amp; Moving</a></li>
+                    <li><a class="dropdown-item p-1" href="{{url_for('office_relocation')}}">Office-Relocation</a></li>
+                    <li><a class="dropdown-item p-1" href="{{url_for('household_shifting')}}">Household shifting</a></li>
+                    <li><a class="dropdown-item p-1" href="{{url_for('transportation')}}">Transportation</a></li>
+                    <li><a class="dropdown-item p-1" href="{{url_for('loading_unloading')}}">Loading unloading</a></li>
+                    <li><a class="dropdown-item p-1" href="{{url_for('pre_moving_survey')}}">Pre Moving Survey</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item page-links dropdown d-none d-lg-block">
+                  <a class="nav-link" href="/services">Services</a>
+                  <div class="dropdown-content">
+                    <a class="services-dropdown-item p-1" href="{{url_for('packing_moving')}}">Packing &amp; Moving</a>
+                    <a class="services-dropdown-item p-1" href="{{url_for('office_relocation')}}">Office-Relocation</a>
+                    <a class="services-dropdown-item p-1" href="{{url_for('household_shifting')}}">Household shifting</a>
+                    <a class="services-dropdown-item p-1" href="{{url_for('transportation')}}">Transportation</a>
+                    <a class="services-dropdown-item p-1" href="{{url_for('loading_unloading')}}">Loading unloading</a>
+                    <a class="services-dropdown-item p-1" href="{{url_for('pre_moving_survey')}}">Pre Moving Survey</a>
+                  </div>
+                </li>
+                <li class="nav-item page-links">
+                  <a class="nav-link" href="{{url_for('about')}}">About</a>
+                </li>
+                <li class="nav-item page-links">
+                  <a class="nav-link" href="{{url_for('contact_us')}}">Contact Us</a>
+                </li>
+                <li class="nav-item page-links">
+                  <a class="nav-link" href="{{url_for('faq')}}"> FAQ </a>
+                </li>
+              </ul>     
+                </div>
               </div>
             </div>
-          </li>
-          <li class="d-block d-lg-none"><a href="{{url_for('services')}}">Services</a></li>
-          <li><a href="{{url_for('about')}}">About</a></li>
-          <li><a href="{{url_for('contact')}}">Contact</a></li>
-          <li class="me-3"><a href="{{url_for('faq')}}">FAQ</a></li>
-        </ul>
-    </nav>
-  </header>
-
-  <div class="container-fluid">
-      {% block content %}
-      {% endblock %}
-  </div>
-  </div>
-  <footer class="text-center text-lg-start bg-light text-muted">
-   <!-- Section: Links  -->
-    <section class="p-3">
-      <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
-        <div class="row mt-3">
-          <!-- Grid column -->
-          <div class="col-md-3 text-start col-lg-4 col-xl-3 mx-auto mb-4 p-0 ps-2">
-            <!-- Content -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              divakar packers and movers
-            </h6>
-            <p>
-              Seamless Relocations, Stress-Free Transitions. Choose Divakar Packers and Movers for a Moving Experience Beyond Compare.
-            </p>
           </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 d-none d-md-block">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-   userful resources
-  </h6>
-            <p>
-              <a href="/services/transportation" class="text-reset">Transportation
-  </a>
-            </p>
-            <p>
-      <a href="/services/office-shifting" class="text-reset">Office Relocation</a>
-            </p>
-            <p>
-      <a href="/services/packing-and-moving" class="text-reset">Packing &amp; Moving</a> 
-  </p>
-            <p>
-    <a href="/services/domestic-shifting" class="text-reset">Household shifting</a>
-  </p>
-          </div>
-          <div class="US-menu">
-            <button class="mb-3 text-uppercase fw-bold p-0 ps-2"id="USM-toggle">Useful Services</button>
-              <ul class="US-list">
-                <li><a href="{{url_for('pam')}}">Packing & Moving</a></li>
-                <li><a href="{{url_for('ds')}}">Household Shifting</a></li>
-                <li><a href="{{url_for('services')}}">Transportation</a></li>
-                <li><a href="{{url_for('t')}}">Office Relocation</a></li>
-              </ul>
-          </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 d-none d-md-block">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">
-              Useful links
-            </h6>
-            <p>
-    <a href="/" class="text-reset">Home</a>
-  </p>
-            <p>
-      <a href="/aboutus" class="text-reset">About Us</a>
-            </p>
-            <p>
-              <a href="/contactus" class="text-reset">Contact Us</a>
-            </p>
-            <p>
-              <a href="/faq" class="text-reset">FAQ</a>
-            </p>
-          </div>
-            <div class="UL-menu">
-              <button class="mb-3 text-uppercase fw-bold p-0 ps-2" id="ULM-toggle">Useful Links</button>
-              <ul class="UL-list">
-                <li><a href="{{url_for('home')}}">Home</a></li>
-                <li><a href="{{url_for('about')}}">About Us</a></li>
-                <li><a href="{{url_for('faq')}}">FAQ</a></li>
-                <li><a href="{{url_for('contact')}}">Contact Us</a></li>
-              </ul>
-            </div>
-          <!-- Grid column -->
-
-          <!-- Grid column -->
-          <div class="col-md-3 text-start col-lg-3 col-xl-3 mx-auto mb-md-0 mb-3 ps-2 p-0">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
-            <p>
-      Anantapur, Andhra Pradesh 515001, India
-            </p>
-            <p>
-              <a class="alink"href="mailto:divakarpackersandmovers@gmail.com">
-                divakarpackersandmovers@gmail.com
-              </a>
-            </p>
-            <p>
-              <a class="alink" href="tel:9492201243">
-                Call us now
-              </a>
-            </p>
-
-          </div>
-          <!-- Grid column -->
-        </div>
-        <!-- Grid row -->
+        </nav> 
       </div>
-    </section>
-    <!-- Section: Links  -->
+    </header>
+    <div class="gap"></div>
+    <main class="container px-0">{% block content %} {% endblock %}</main>
+    <footer
+      class="text-center text-lg-start text-dark"
+      style="background-color: #eceff1"
+    >
+      <!-- Section: Links  -->
+      <section class="pt-3">
+        <div class="container text-center text-md-start mt-5">
+          <!-- Grid row -->
+          <div class="row mt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold">Divakar Packers and Movers</h6>
+              <hr
+                class="mb-4 mt-0 d-inline-block mx-auto bg-dark"
+                style="width: 100%; height: 2px"
+              />
+              <p>
+                Seamless Relocations, Stress-Free Transitions. Choose Divakar
+                Packers and Movers for a Moving Experience Beyond Compare.
+              </p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold">Useful Services</h6>
+              <hr
+                class="mb-4 mt-0 d-inline-block mx-auto bg-dark"
+                style="width: 100%; height: 2px"
+              />
+              <p>
+                <a href="{{url_for('office_relocation')}}" class="text-dark page-links"
+                  >Office Relocation</a
+                >
+              </p>
+              <p>
+                <a href="{{url_for('household_shifting')}}" class="text-dark page-links"
+                  >Household shifting</a
+                >
+              </p>
+              <p>
+                <a href="{{url_for('packing_moving')}}" class="text-dark page-links"
+                  >Packing &amp; Moving</a
+                >
+              </p>
+              <p>
+                <a href="{{url_for('transportation')}}" class="text-dark page-links"
+                  >Transportation</a
+                >
+              </p>
+            </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase fw-bold">Useful links</h6>
+              <hr
+                class="mb-4 mt-0 d-inline-block mx-auto bg-dark"
+                style="width: 100%; height: 2px"
+              />
+              <p>
+                <a href="/" class="text-dark page-links">Home</a>
+              </p>
+              <p>
+                <a href="{{url_for('about')}}" class="text-dark page-links">About</a>
+              </p>
+              <p>
+                <a href="{{url_for('faq')}}" class="text-dark page-links">FAQ</a>
+              </p>
+              <p>
+                <a href="{{url_for('pre_moving_survey')}}" class="text-dark page-links">Pre moving survey</a>
+              </p>
+            </div>
+            <!-- Grid column -->
 
-    <!-- Copyright -->
-    <div class="text-start text-center p-4">
-      © 2023 Copyright:
-      <a class="text-reset fw-bold" href="https://divakarpackersandmover.com">Divakar Packers and  Movers</a>
-    </div>
-    <!-- Copyright -->
-  </footer>
-</body>
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <!-- Links -->
+              <h6 class="text-uppercase fw-bold">Contact</h6>
+              <hr
+                class="mb-4 mt-0 d-inline-block mx-auto bg-dark"
+                style="width: 100%; height: 2px"
+              />
+              <p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-house"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"
+                  />
+                </svg>
+                Anantapur, Andhra Pradesh 515001, India.
+              </p>
+              <p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-envelope"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"
+                  />
+                </svg>
+                divakarpackersandmovers@gmail.com
+              </p>
+              <p>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-telephone"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"
+                  />
+                </svg>
+                +91-9492201243
+              </p>
+            </div>
+            <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+        </div>
+      </section>
+      <!-- Section: Links  -->
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2020-2024 Copyright:
+        <a
+          class="text-dark page-links"
+          href="https://divakarpackersandmover.com/"
+          >Divakar Packers and Movers</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <script src="{{url_for('static', filename='JS/bootstrap.bundle.min.js')}}"></script>
+  </body>
 </html>

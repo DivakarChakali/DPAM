@@ -1,6 +1,6 @@
 {% extends "layout.html"%}
 {% block title %}
-contact
+Divakar Packers and Movers | contact us
 {% endblock %}
 {% block content %}
 <div class="flash-message">
@@ -14,37 +14,37 @@ contact
     {% endif %}
     {% endwith %}
 </div>
-<div class="container mt-5">
-  <h1 class="fw fs-2 mb-4 text-start">Contact Us</h1>
+<div class="container">
+    <h1 class="fw fs-2 mb-4 text-start">Contact Us</h1>
     <div class="row mb-3">
-      <div class="col-md-6 text-start">
-          <h2>Contact Information</h2>
-          <address>
-              <strong>Divakar Packers and Movers</strong><br>
-              D No. 28-5-587, Housing Board Colony<br>
-              Anantapur, Andhra Pradesh 515001.
-          </address>
-          <p><strong>Email:</strong> divakarpackersandmovers@gmail.com</p>
-          <p><strong>Phone:</strong> +91 9492201243</p>
-      </div>
-      <div class="col-md-6 text-start">
-          <h2>Contact Form</h2>
-          <form action="/submitcform" method="post">
-              <div class="form-group m-2">
-                  <label class="mt-2" for="cname">Name:</label>
-                  <input type="text" class="form-control" id="cname" name="cname" required>
-              </div>
-              <div class="form-group m-2">
-                  <label class="mt-2" for="cemail">Email:</label>
-                  <input type="email" class="form-control" id="cemail" name="cemail" required>
-              </div>
-              <div class="form-group m-2">
-                  <label class="mt-2"for="cmessage">Message:</label>
-                  <textarea class="form-control" id="cmessage" name="cmessage" required></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-      </div>
+        <div class="col-md-6 text-start">
+            <h2>Contact Information</h2>
+            <address>
+                <strong>Divakar Packers and Movers</strong><br>
+                D No. 28-5-587, Housing Board Colony<br>
+                Anantapur, Andhra Pradesh 515001.
+            </address>
+            <p><strong>Email:</strong> divakarpackersandmovers@gmail.com</p>
+            <p><strong>Phone:</strong> +91-9492201243</p>
+        </div>
+        <div class="col-md-6 text-start">
+            <h2>Contact Form</h2>
+            <form action="/submitcform" method="post">
+                <div class="form-group m-2">
+                    <label class="mt-2" for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group m-2">
+                    <label class="mt-2" for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group m-2">
+                    <label class="mt-2"for="message">Message:</label>
+                    <textarea class="form-control" id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
     </div>
 </div>
 {% endblock %}

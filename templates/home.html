@@ -1,217 +1,427 @@
 {% extends "layout.html" %}
 {% block title %}
-Home page
+Divakar Packers and Movers: Reliable Moving Services in Anantapur
 {% endblock %}
 {% block content %}
-<!-- <head>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</head> -->
-<div class="row mt-5">
-  <div class="col-3 d-none d-md-block">
-    <div id="c-quote-home">
-      <div class="c-quote">
-      <h1 class="fs-3">Request a Quote</h1>
-      <form method="POST" action="/submitrform">
-        <div>
-          <label for="name">Name:</label>
-          <input type="text" name="name" id="name" required>
-        </div>
-        <div>
-          <label for="email">Email:</label>
-          <input type="email" name="email" id="email" required>
-        </div>
-        <div>
-          <label for="phone">Phone:</label>
-          <input type="tel" name="phone" id="phone" pattern="[789][0-9]{9}" required>
-        </div>
-        <div>
-          <label for="moving_date">Moving Date:</label>
-          <input type="date" name="moving_date" id="moving_date" required>
-        </div>
-        <div>
-          <label for="origin">Origin:</label>
-          <input type="text" name="origin" id="origin" required>
-        </div>
-        <div>
-          <label for="destination">Destination:</label>
-          <input type="text" name="destination" id="destination" required>
-        </div>
-        <div>
-          <label for="special_requests">Special Requests:</label>
-          <textarea name="special_requests" id="special_requests"></textarea>
-        </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <button type="submit" class="p-2 bg-danger text-white">Submit</button>
-          <h4 class="text-center m-0">or</h4>
-          <a class="text-center p-2 bg-primary text-white rounded" href="tel:9492201243">
-            Call Us
-          </a>
-        </div>
-      </form>
-      {% if errors %}
-      <div class="error">
-          <ul class="list-group-item list-group-item-danger">
-            {% for error in errors %}
-            <li>{{ error }}</li>
-            {% endfor %}
-          </ul>
-      </div>
-      {% endif %}
-      </div>
-  
+<div class="container">
+  <div class="flash-message text-center">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }}">
+      {{ message }}
     </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
   </div>
-  <div class="col">
-    <div class="container">
-      <div class="flash-message text-center">
-          {% with messages = get_flashed_messages(with_categories=true) %}
-          {% if messages %}
-          {% for category, message in messages %}
-          <div class="alert alert-{{ category }}">
-              {{ message }}
-          </div>
-          {% endfor %}
-          {% endif %}
-          {% endwith %}
-      </div>
-    </div>
-    <div class="tc container-fluid d-none d-md-block">
-      <div class=tcontainer>
-        <img src="{{ url_for('static', filename='images/banner.jpg') }}" class="img-fluid"  alt="Banner">
-        <div class="bottom-right"><a href="https://www.freepik.com/free-vector/moving-service-workers-help-home-relocation_32883349.htm#query=packers%20and%20movers&position=29&from_view=keyword&track=ais" class="text-decoration-none text-body-tertiary fs-6.5 fw-lighter">Image by upklyak on Freepik</a>
+</div>
+<div class="container">
+  <div class="card d-none d-md-block px-0 border border-0">
+    <div class="row">
+      <div class="col-6 d-flex align-items-center" style="height:620px!important">
+        <div>
+          <span class="display-4">Stress-Free Moving Solutions with <h1>Divakar Packers and Movers</h1></span>
+          <p class="fs-5 m-0">Professional Packers, Reliable Transport, and Affordable Rates.</p>
+          <br>
+          <a class="text-decoration-none text-dark m-2 btn btn-outline-success" href="tel:949220143">Get Quote</a><a
+            class="text-decoration-none text-dark m-2 btn btn-outline-warning" href="#content">Know more.</a>
         </div>
       </div>
-    </div>
-    <div class="umc container-fluid text-start mt-3">
-      <div class="c-quote d-block d-sm-none">
-      <h1 class="fs-3">Request a Quote</h1>
-      <form method="POST" action="/submitrform">
-        <div>
-          <label for="name">Name:</label>
-          <input type="text" name="name" id="name" autocomplete="off" required>
-        </div>
-        <div>
-          <label for="email">Email:</label>
-          <input type="email" name="email" id="email" autocomplete="off" required>
-        </div>
-        <div>
-          <label for="phone">Phone:</label>
-          <input type="tel" name="phone" id="phone" autocomplete="off" pattern="[789][0-9]{9}" required>
-        </div>
-        <div>
-            <label for="moving_date">Moving Date:</label>
-            <input type="date" name="moving_date" id="moving_date" required>
-        </div>
-        <div>
-          <label for="origin">Origin:</label>
-          <input type="text" name="origin" id="origin" required>
-        </div>
-        <div>
-          <label for="destination">Destination:</label>
-          <input type="text" name="destination" id="destination" required>
-        </div>
-        <div>
-          <label for="special_requests">Special Requests:</label>
-          <textarea name="special_requests" id="special_requests"></textarea>
-        </div>
-        <div class="d-grid gap-2 col-6 mx-auto">
-          <button type="submit" class="p-2 bg-danger text-white">Submit</button>
-          <h4 class="text-center m-0">or</h4>
-          <a class="text-center p-2 bg-primary text-white rounded" href="tel:9492201243">
-            Call Us
-          </a>
-        </div>
-      </form>
-      {% if errors %}
-      <div class="error">
-        <ul class="list-group-item list-group-item-danger">
-          {% for error in errors %}
-          <li>{{ error }}</li>
-          {% endfor %}
-        </ul>
-      </div>
-      {% endif %}
-      </div>
-      <div class="row">
-        <div class="col-lg-7 col-md-12 d-md-block">
-          <h2>Welcome to Divakar Packers and Movers</h2>
-            <div class="fs-5">
-              <p class="fs-6">
-                <span class="fs-5" >D</span>ivakar <span class="fs-5">P</span>ackers and <span class="fs-5">M</span>overs is the best and most skilled moving company in the industry of packaging and relocating. From several years, we emerged as the most efficient relocation provider in India, which offers remarkable services at affordable cost.
-              </p>
-              <p class="fs-6">
-                <span class="fs-5">W</span>e Believe that relocating is more than just relocating your possessions; it's a transformation in your life, and we at Divakar Packers and Movers are aware of this. With this knowledge, we approach every action we take with a tailored strategy. Our skilled team takes pride in handling your belongings with the respect they deserve, enabling a simple transition to your new location.
-              </p>
-            </div>
-          </div>
-          <div class="d-none d-lg-block col-md-5">
-            <div class=tcontainer>
-              <img class="container-fluid" src="{{ url_for('static', filename='images/sc.webp') }}" alt="">
-              <div class="bottom-right mr-3">
-                Image by <a href="https://www.freepik.com/free-vector/flat-design-house-moving-illustration-with-charaters_9905413.htm#query=packers%20and%20movers&position=6&from_view=keyword&track=ais">Freepik</a>
-            </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    <div class="mc container-fluid mb-4">
-      <div class="fs-2 mb-4 mt-4 text-center d-none d-md-block">
-          <span>Why Would Customer Choose Us & What Makes Us Unique?</span>
-      </div>
-      <div class="fs-2 mb-4 mt-4 d-flex justify-content-center d-block d-sm-none ">
-          <span>What Makes Us Unique?</span>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card u-card">
-            <div class="card-body">
-              <h5 class="card-title text-center">FREE VISIT</h5>
-              <p class="card-text">Book a free visit to provide a customized plan to ensure your move is hassle-free and smooth.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card u-card">
-            <div class="card-body">
-              <h5 class="card-title text-center">AFFORDABLE RATES</h5>
-              <p class="card-text">Our services are trustworthy , dependable and at the most affordable rates among competitors.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card u-card">
-            <div class="card-body">
-              <h5 class="card-title text-center">PROFESSIONAL CREWS</h5>
-              <p class="card-text">Our experienced and skilled crews will handle your items with care.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card u-card">
-            <div class="card-body">
-              <h5 class="card-title text-center">FASTR DELIVERY</h5>
-              <p class="card-text">Get your home items delivered quickly and safely to your doorstep.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card u-card">
-            <div class="card-body">
-              <h5 class="card-title text-center">TRANSPARENCY</h5>
-              <p class="card-text">It is crucial for building strong relationships and trust between us and our clients. No hidden charges.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6 mb-4">
-          <div class="card u-card">
-            <div class="card-body">
-              <h5 class="card-title text-center">24/7 CUSTOMER SUPPORT</h5>
-              <p class="card-text">Receive customer help round-the-clock by phone, email.</p>
-            </div>
-          </div>
-        </div>
+      <div class="col-6" style="max-height: 630px!important">
+        <img src="/static/images/banner-aside.png" class="card-img" alt="background image" style="object-fit: cover">
       </div>
     </div>
   </div>
+  <div id="banner-mobile" class="d-block d-md-none">
+    <div class="bg-primary-subtle">
+      <span class="display-4">Stress-Free Moving Solutions with <h1>Divakar Packers and Movers</h1></span>
+      <p class="fs-5 m-0">Professional Packers, Reliable Transport, and Affordable Rates.</p>
+      <br>
+      <a class="text-decoration-none text-dark m-2 btn btn-outline-success" href="tel:949220143">Call Us</a><a
+        class="text-decoration-none text-dark m-2 btn btn-outline-warning" href="#content">Know more.</a>
+    </div>
+  </div>
+  <section class="container-fluid" id="c-quote-home">
+    <p class="text-center fs-3 mb-2">Request Quote</p>
+    <form class="border border-1 p-2" action="submit-quote" method="post">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" class="form-control" id="name" name="name">
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Phone</label>
+        <input type="tel" class="form-control" id="phone" name="phone">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" name="email">
+      </div>
+      <div class="mb-3">
+        <label for="moving_date" class="form-label">Moving Date</label>
+        <input type="date" class="form-control" id="moving_date" name="moving_date">
+      </div>
+      <div class="mb-3">
+        <label for="from_address" class="form-label">From Address</label>
+        <input type="text" class="form-control" id="from_address" name="from_address">
+      </div>
+      <div class="mb-3">
+        <label for="to_address" class="form-label">To address</label>
+        <input type="text" class="form-control" id="to_address" name="to_address">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    {% if errors %}
+    <div class="error">
+      <ul class="list-group-item list-group-item-danger">
+        {% for error in errors %}
+        <li>{{ error }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </section>
+</div>
+<div class="col-sm-12 p-0" id="content">
+  <!--Info of DPAM-->
+  <section class="container-fluid">
+    <h2 class="text-center p-3">
+      Welcome to Divakar Packers and Movers
+    </h2>
+    <div>
+      <p>
+        Divakar Packers and Movers is the best and most
+        skilled moving company in the industry of packaging and
+        relocating. From several years, we emerged as the most
+        efficient relocation provider in India, which offers
+        remarkable services at affordable cost.
+      </p>
+      <p>
+        We Believe that relocating is more than just
+        relocating your possessions; it's a transformation in your
+        life, and we at Divakar Packers and Movers are aware of
+        this. With this knowledge, we approach every action we take
+        with a tailored strategy. Our skilled team takes pride in
+        handling your belongings with the respect they deserve,
+        enabling a simple transition to your new location.
+      </p>
+    </div>
+  </section>
+  <!--Why us section-->
+  <section class="container-fluid">
+    <h2 class="text-center p-3">
+      <span class="d-none d-lg-block">Why Would Customer Choose Us &amp; What Makes Us
+        Unique?</span>
+      <span class="d-block d-lg-none">What Makes Us Unique?</span>
+    </h2>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100 cards border-2">
+          <div class="card-body">
+            <h5 class="card-title text-center">FREE VISIT</h5>
+            <p class="card-text text-center">
+              Book a free visit to provide a customized plan to
+              ensure your move is hassle-free and smooth.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 cards border-2">
+          <div class="card-body">
+            <h5 class="card-title text-center">AFFORDABLE RATES</h5>
+            <p class="card-text text-center">
+              Our services are trustworthy , dependable and at the
+              most affordable rates among competitors.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 cards border-2">
+          <div class="card-body">
+            <h5 class="card-title text-center">
+              PROFESSIONAL CREWS
+            </h5>
+            <p class="card-text text-center">
+              Our experienced and skilled crews will handle your
+              items with care.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 cards border-2">
+          <div class="card-body">
+            <h5 class="card-title text-center">FASTR DELIVERY</h5>
+            <p class="card-text text-center">
+              Get your home items delivered quickly and safely to
+              your doorstep.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 cards border-2">
+          <div class="card-body">
+            <h5 class="card-title text-center">TRANSPARENCY</h5>
+            <p class="card-text text-center">
+              It is crucial for building strong relationships and
+              trust between us and our clients. No hidden charges.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100 cards border-2">
+          <div class="card-body">
+            <h5 class="card-title text-center">
+              24/7 CUSTOMER SUPPORT
+            </h5>
+            <p class="card-text text-center">
+              Receive customer help round-the-clock by phone, email.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--Services section-->
+  <section class="container-fluid">
+    <h2 class="text-center p-3">
+      Our Services
+    </h2>
+    <!--services info-->
+    <section>
+      <p>
+        At Divakar Packers and Movers, we take pride in offering a
+        comprehensive range of services to meet your relocation
+        needs. With years of experience and a commitment to
+        excellence, we ensure that your move is smooth and
+        hassle-free.
+      </p>
+      <p>
+        <span class="fw-bold">Packing and Moving:</span> Our expert
+        team handles every aspect of packing and moving. We use
+        top-quality materials to protect your belongings during
+        transit. Your move is our responsibility, and we execute it
+        with precision.
+      </p>
+      <p>
+        <span class="fw-bold">Household Shifting:</span> Moving your
+        household is a big task, and we're here to make it easier.
+        Our professionals ensure that your cherished possessions are
+        safely transported to your new home.
+      </p>
+      <p>
+        <span class="fw-bold">Loading and Unloading:</span> Heavy
+        lifting and careful handling are our specialties. We load
+        and unload your items with care, ensuring a safe journey to
+        your new destination.
+      </p>
+      <p>
+        <span class="fw-bold">Transportation:</span> Our
+        well-maintained fleet of vehicles can accommodate items of
+        all sizes. We provide secure transportation to deliver your
+        belongings to your new location.
+      </p>
+      <p>
+        <span class="fw-bold">Pre-Moving Survey:</span> Our
+        pre-moving survey allows us to understand your unique
+        requirements. We create a customized moving plan tailored to
+        your specific needs.
+      </p>
+      <p>
+        <span class="fw-bold">Office Relocation:</span> Minimize
+        business disruption with our office relocation services. We
+        ensure a smooth transition, allowing you to focus on your
+        business.
+      </p>
+    </section>
+    <!--service cards-->
+    <section>
+      <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+        <a class="text-decoration-none" href="{{url_for('household_shifting')}}">
+          <div class="col">
+            <div class="card h-100 cards border-2">
+              <img src="/static/images/household-shifting-image.jpg" class="card-img-top" loading="lazy"
+                alt="household-shifting image." />
+              <div class="card-body">
+                <h5 class="card-title text-center">
+                  Household Shifting
+                </h5>
+                <p class="card-text text-center">
+                  We make moving easy and stress-free for your
+                  household.
+                </p>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a class="text-decoration-none" href="{{url_for('office_relocation')}}">
+          <div class="col">
+            <div class="card h-100 cards border-2">
+              <img src="/static/images/office-relocation-image.jpg" class="card-img-top" loading="lazy"
+                alt="office relocation image" />
+              <div class="card-body">
+                <h5 class="card-title text-center">
+                  Office Relocation
+                </h5>
+                <div class="card-text text-center">
+                  We specialize in seamless office relocation
+                  services.
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a class="text-decoration-none" href="{{url_for('packing_moving')}}">
+          <div class="col">
+            <div class="card h-100 cards border-2">
+              <img src="/static/images/packing-moving-image.jpg" class="card-img-top" loading="lazy"
+                alt="packing-moving image." />
+              <div class="card-body">
+                <h5 class="card-title text-center">
+                  Packing and Moving
+                </h5>
+                <div class="card-text text-center">
+                  Our experts ensure safe packing and moving of your
+                  belongings.
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a class="text-decoration-none" href="{{url_for('pre_moving_survey')}}">
+          <div class="col">
+            <div class="card h-100 cards border-2">
+              <img src="/static/images/pre-moving-survey-image.jpg" class="card-img-top" loading="lazy"
+                alt="pre-moving-survey image" />
+              <div class="card-body">
+                <h5 class="card-title text-center">
+                  Pre-Moving Survey
+                </h5>
+                <div class="card-text text-center">
+                  We assess your needs and create a customized moving
+                  plan.
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a class="text-decoration-none" href="{{url_for('loading_unloading')}}">
+          <div class="col">
+            <div class="card h-100 cards border-2">
+              <img src="/static/images/loading-unloading-image.webp" class="card-img-top" loading="lazy"
+                alt="loading-unloading image" />
+              <div class="card-body">
+                <h5 class="card-title text-center">
+                  Loading and Unloading
+                </h5>
+                <div class="card-text text-center">
+                  Efficient loading and unloading services for your
+                  items.
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+        <a class="text-decoration-none" href="{{url_for('transportation')}}">
+          <div class="col">
+            <div class="card h-100 cards border-2">
+              <img src="/static/images/transportation-image.jpg" class="card-img-top" loading="lazy"
+                alt="transportation image" />
+              <div class="card-body">
+                <h5 class="card-title text-center">Transportation</h5>
+                <div class="card-text text-center">
+                  Safe and secure transportation of your belongings.
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+  </section>
+  <section class="container-fluid d-none d-md-block">
+    <div class="card">
+      <img src="/static/images/pexels-rdne-7464473.jpg" class="card-img" alt="happy customers image" loading="lazy">
+      <div class="card-img-overlay p-5 d-flex flex-column justify-content-around">
+        <div id="c-count" class="d-flex flex-row bg-dark p-4">
+          <div class="col text-center text-white">
+            <div class="display-4 fw-bold" id="happyCustomers">
+              0
+            </div>
+            <p>Happy customers</p>
+          </div>
+          <div class="col text-center text-white">
+            <div class="display-4 fw-bold" id="movesCompleted">
+              0
+            </div>
+            <p>Moves completed</p>
+          </div>
+          <div class="col text-center text-white">
+            <div class="display-4 fw-bold" id="yearsOfExp">
+              0
+            </div>
+            <p>Years of experience</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--FAQ's-->
+  <section class="container-fluid">
+    <h2 class="text-center p-3">
+      Frequently Asked Questions
+    </h2>
+    <div class="faq">
+      <div class="faq-item">
+        <h4>Q: What services do you provide?</h4>
+        <div class="faq-answer">
+          <p>
+            A: Divakar Packers and Movers offer a range of services,
+            including office shifting, loading &amp; unloading,
+            packing &amp; moving, pre-moving survey, and
+            transportation services.<a href="/services">explore our services</a>
+            to learn more.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <h4>Q: How can I request a moving quote?</h4>
+        <div class="faq-answer">
+          <p>
+            A: You can request a moving quote by filling out our
+            online contact <a href="/request-quote">form</a> ,
+            or you can call our customer service for assistance.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <h4>Q: How do I book your services?</h4>
+        <div class="faq-answer">
+          <p>
+            A: You can book our services by visiting our website and
+            filling out the booking form. We will get in touch with
+            you shortly.
+          </p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <h4>Q: What is the cost of your moving services?</h4>
+        <div class="faq-answer">
+          <p>
+            A: The cost of our services depends on various factors
+            such as the distance, the volume of items, and any
+            additional services you may require. Contact us for a
+            customized quote.
+          </p>
+        </div>
+      </div>
+      <!-- Add more FAQ items here -->
+    </div>
+  </section>
 </div>
 {% endblock %}
