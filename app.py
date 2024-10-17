@@ -98,6 +98,12 @@ def contact_us():
       'Cache-Control'] = 'public, max-age=180'  # Example: Cache for 1 hour
   return response
 
+@app.route('/request-quote')
+def request_quote():
+  response = app.make_response(render_template('request-quote.html'))
+  response.headers[
+      'Cache-Control'] = 'public, max-age=180'  # Example: Cache for 1 hour
+  return response
 
 @app.route('/faq')
 def faq():
