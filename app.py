@@ -83,17 +83,17 @@ def transportation():
       'Cache-Control'] = 'public, max-age=3600'  # Example: Cache for 1 hour
   return response
 
-@app.route('/aboutus')
+@app.route('/about')
 def about():
-  response = app.make_response(render_template('aboutus.html'))
+  response = app.make_response(render_template('about.html'))
   response.headers[
       'Cache-Control'] = 'public, max-age=180'  # Example: Cache for 1 hour
   return response
 
 
-@app.route('/contactus')
-def contact():
-  response = app.make_response(render_template('contactus.html'))
+@app.route('/contact-us')
+def contact_us():
+  response = app.make_response(render_template('contact-us.html'))
   response.headers[
       'Cache-Control'] = 'public, max-age=180'  # Example: Cache for 1 hour
   return response
