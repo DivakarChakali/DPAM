@@ -1,0 +1,143 @@
+{% extends "layout.html"%}
+{% block title %}
+Divakar Packers and Movers | services
+{% endblock %}
+{% block content %}
+<div class="container-fluid mb-4">
+  <section class="container-fluid" id="services">
+    <h2 class="text-center">
+      Service we offer
+    </h2>
+    <!--services info-->
+    <section>
+      <p>
+        At Divakar Packers and Movers, we take pride in offering a comprehensive
+        range of services to meet your relocation needs. With years of
+        experience and a commitment to excellence, we ensure that your move is
+        smooth and hassle-free.
+      </p>
+      <p>
+        <span class="fw-bold">Packing and Moving:</span> Our expert team handles
+        every aspect of packing and moving. We use top-quality materials to
+        protect your belongings during transit. Your move is our responsibility,
+        and we execute it with precision.
+      </p>
+      <p>
+        <span class="fw-bold">Household Shifting:</span> Moving your household
+        is a big task, and we're here to make it easier. Our professionals
+        ensure that your cherished possessions are safely transported to your
+        new home.
+      </p>
+      <p>
+        <span class="fw-bold">Loading and Unloading:</span> Heavy lifting and
+        careful handling are our specialties. We load and unload your items with
+        care, ensuring a safe journey to your new destination.
+      </p>
+      <p>
+        <span class="fw-bold">Transportation:</span> Our well-maintained fleet
+        of vehicles can accommodate items of all sizes. We provide secure
+        transportation to deliver your belongings to your new location.
+      </p>
+      <p>
+        <span class="fw-bold">Pre-Moving Survey:</span> Our pre-moving survey
+        allows us to understand your unique requirements. We create a customized
+        moving plan tailored to your specific needs.
+      </p>
+      <p>
+        <span class="fw-bold">Office Relocation:</span> Minimize business
+        disruption with our office relocation services. We ensure a smooth
+        transition, allowing you to focus on your business.
+      </p>
+    </section>
+    <!--service cards-->
+    <section>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <a class="text-decoration-none" href="{{url_for('pre_moving_survey')}}">
+            <div class="card h-100 cards border-2">
+              <img src="/static/images/pre-moving-survey-image.jpg" class="card-img-top" loading="lazy"
+                alt="pre-moving-survey image" />
+              <div class="card-body">
+                <h5 class="card-title text-center">Pre-Moving Survey</h5>
+                <div class="card-text text-center">
+                  We assess your needs and create a customized moving plan.
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="{{url_for('household_shifting')}}">
+            <div class="card h-100 cards border-2">
+              <img src="/static/images/household-shifting-image.webp" class="card-img-top" loading="lazy"
+                alt="household-shifting image.">
+              <div class="card-body">
+                <h5 class="card-title text-center">Household Shifting</h5>
+                <p class="card-text text-center">
+                  We make moving easy and stress-free for your household.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="{{url_for('packing_moving')}}">
+            <div class="card h-100 cards border-2">
+              <img src="/static/images/packing-moving-image.jpg" class="card-img-top" loading="lazy"
+                alt="packing-moving image." />
+              <div class="card-body">
+                <h5 class="card-title text-center">Packing and Moving</h5>
+                <div class="card-text text-center">
+                  Our experts ensure safe packing and moving of your belongings.
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="{{url_for('office_relocation')}}">
+            <div class="card h-100 cards border-2">
+              <img src="/static/images/office-relocation-image.webp" class="card-img-top" loading="lazy"
+                alt="office relocation image" />
+              <div class="card-body">
+                <h5 class="card-title text-center">Office-Relocation</h5>
+                <div class="card-text text-center">
+                  We specialize in seamless office relocation services.
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="{{url_for('loading_unloading')}}">
+            <div class="card h-100 cards border-2">
+              <img src="/static/images/loading-unloading-image.webp" class="card-img-top" loading="lazy"
+                alt="loading-unloading image" />
+              <div class="card-body">
+                <h5 class="card-title text-center">Loading and Unloading</h5>
+                <div class="card-text text-center">
+                  Efficient loading and unloading services for your items.
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col">
+          <a class="text-decoration-none" href="{{url_for('transportation')}}">
+            <div class="card h-100 cards border-2">
+              <img src="/static/images/transportation-image.webp" class="card-img-top" loading="lazy"
+                alt="transportation image" />
+              <div class="card-body">
+                <h5 class="card-title text-center">Transportation</h5>
+                <div class="card-text text-center">
+                  Safe and secure transportation of your belongings.
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </section>
+</div>
+{% endblock %}
