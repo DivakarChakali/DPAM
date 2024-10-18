@@ -2,3 +2,6 @@
 @media screen and (min-width: 768px) {
     #h-aside {height:620px!important;}
 }
+@media screen and (max-width: 767px) {
+    #h-aside {padding-top: 10rem;}
+}
