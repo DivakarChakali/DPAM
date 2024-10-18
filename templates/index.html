@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% block title %}{% endblock %}</title>
+  <meta property="og:site_name" content="Divakar Packers and Movers | Best Packers and Movers in Anantapur">
+  <meta property="og:title" content="Divakar Packers &amp; Movers | Best Packers and Movers in Anantapur">
+  <meta name="twitter:title" content="Divakar Packers &amp; Movers | Best Packers and Movers in Anantapur">
+  <meta property="og:description"
+    content="Divakar Packers and Movers offers professional packing and moving services in Anantapur, Andhra Pradesh. We specialize in local and long-distance relocations, ensuring a hassle-free experience.">
+  <meta property="og:url" content="https://www.divakarpackersandmover.com/">
+  <link rel="canonical" href="https://www.divakarpackersandmover.com/">
+  <meta name="description"
+    content="Divakar Packers and Movers offers professional packing and moving services in Anantapur, Andhra Pradesh. We specialize in local and long-distance relocations, ensuring a hassle-free experience.">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords"
+    content="Packers and Movers Anantapur,Anantapur packers, Anantapur packers and movers, Packers and Movers near me, Movers and Packers, Divakar Packers and Movers Anantapur, Best Packers and Movers, Best Packers and Movers Anantapur">
+  <meta name="url" content="https://www.divakarpackersandmover.com/">
+  <link rel="stylesheet" href="{{url_for('static',filename='CSS/styles.css')}}">
+  <link rel="stylesheet" href="{{url_for('static',filename='CSS/bootstrap.min.css')}}">
+  <link class="logo" rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/logo.jpeg') }}">
+  <script src="/static/JS/script.js"></script>
+</head>
+
+<body>
+  <header class="fixed-top bg-light">
+    <div class="container-md p-0">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <div class="container-fluid d-flex justify-content-between">
+            <a class="navbar-brand px-3" href="/"><img src="/static/images/logo.jpeg" alt="DPM navbar logo"
+                style="height: 3em; border-radius: 50%"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="offcanvas offcanvas-end" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                  Divakar Packers and Movers
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body p-2">
+                <ul class="navbar-nav justify-content-end flex-grow-1">
+                  <li class="nav-item page-links">
+                    <a class="nav-link" href="/">Home</a>
+                  </li>
+                  <li class="nav-item page-links">
+                    <a class="nav-link" href="#services">Services</a>
+                  </li>
+                  <li class="nav-item page-links">
+                    <a class="nav-link" href="#whyus">Why us</a>
+                  </li>
+                  <li class="nav-item page-links">
+                    <a class="nav-link" href="#about">About</a>
+                  </li>
+                  <li class="nav-item page-links">
+                    <a class="nav-link" href="#contactus">Contact Us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div class="gap"></div>
+  <main class="container px-0">
+    <div class="container">
+      <div class="flash-message text-center">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+          {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+      </div>
+    </div>
+    <div class="container">
+      <div class="card px-0 border border-0">
+        <div class="row">
+          <div class="col-sm-12 col-md-6 d-flex align-items-center" style="height:620px!important">
+            <div>
+              <span class="display-4">Stress-Free Moving Solutions with <h1>Divakar Packers and Movers</h1></span>
+              <p class="fs-5 m-0">Professional Packers, Reliable Transport, and Affordable Rates.</p>
+              <br>
+              <a class="text-decoration-none text-dark m-2 btn btn-outline-success" href="tel:949220143">Get Quote</a><a
+                class="text-decoration-none text-dark m-2 btn btn-outline-warning" href="#content">Know more.</a>
+            </div>
+          </div>
+          <div class="col-6 d-none d-md-block" style="max-height: 630px!important">
+            <img src="/static/images/banner-aside.webp" class="card-img" alt="hero image" style="object-fit: cover">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 p-0" id="content">
+      <!--Info of DPAM-->
+      <section class="container-fluid" id="about">
+        <h2 class="text-center p-3">
+          Welcome to Divakar Packers and Movers
+        </h2>
+        <div>
+          <p>
+            Divakar Packers and Movers is the best and most
+            skilled moving company in the industry of packaging and
+            relocating. From several years, we emerged as the most
+            efficient relocation provider in India, which offers
+            remarkable services at affordable cost.
+          </p>
+          <p>
+            We Believe that relocating is more than just
+            relocating your possessions; it's a transformation in your
+            life, and we at Divakar Packers and Movers are aware of
+            this. With this knowledge, we approach every action we take
+            with a tailored strategy. Our skilled team takes pride in
+            handling your belongings with the respect they deserve,
+            enabling a simple transition to your new location.
+          </p>
+        </div>
+      </section>
+      <section class="container-fluid" id="whyus">
+        <h2 class="text-center p-3">
+          <span class="d-none d-lg-block">Why Would Customer Choose Us &amp; What Makes Us
+            Unique?</span>
+          <span class="d-block d-lg-none">What Makes Us Unique?</span>
+        </h2>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+            <div class="card h-100 cards border-2">
+              <div class="card-body">
+                <p class="card-title fs-4 text-center">FREE VISIT</p>
+                <p class="card-text text-center">
+                  Book a free visit to provide a customized plan to
+                  ensure your move is hassle-free and smooth.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 cards border-2">
+              <div class="card-body">
+                <p class="card-title fs-4 text-center">AFFORDABLE RATES</p>
+                <p class="card-text text-center">
+                  Our services are trustworthy , dependable and at the
+                  most affordable rates among competitors.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 cards border-2">
+              <div class="card-body">
+                <p class="card-title fs-4 text-center">
+                  PROFESSIONAL CREWS
+                </p>
+                <p class="card-text text-center">
+                  Our experienced and skilled crews will handle your
+                  items with care.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 cards border-2">
+              <div class="card-body">
+                <p class="card-title fs-4 text-center">FASTR DELIVERY</p>
+                <p class="card-text text-center">
+                  Get your home items delivered quickly and safely to
+                  your doorstep.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 cards border-2">
+              <div class="card-body">
+                <p class="card-title fs-4 text-center">TRANSPARENCY</p>
+                <p class="card-text text-center">
+                  It is crucial for building strong relationships and
+                  trust between us and our clients. No hidden charges.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100 cards border-2">
+              <div class="card-body">
+                <p class="card-title fs-4 text-center">
+                  24/7 CUSTOMER SUPPORT
+                </p>
+                <p class="card-text text-center">
+                  Receive customer help round-the-clock by phone, email.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container-fluid" id="services">
+        <h2 class="text-center p-3">
+          Our Services
+        </h2>
+        <p>
+          At Divakar Packers and Movers, we take pride in offering a
+          comprehensive range of services to meet your relocation
+          needs. With years of experience and a commitment to
+          excellence, we ensure that your move is smooth and
+          hassle-free.
+        </p>
+        <section>
+          <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
+            <div class="col">
+              <div class="card h-100 cards border-2">
+                <img src="/static/images/household-shifting-image.webp" class="card-img-top" loading="lazy"
+                  alt="household-shifting image." />
+                <div class="card-body">
+                  <p class="card-title fs-5 text-center">
+                    Household Shifting
+                  </p>
+                  <p class="card-text text-center">
+                    We make moving easy and stress-free for your
+                    household.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 cards border-2">
+                <img src="/static/images/office-relocation-image.webp" class="card-img-top" loading="lazy"
+                  alt="office relocation image" />
+                <div class="card-body">
+                  <p class="card-title fs-5 text-center">
+                    Office Relocation
+                  </p>
+                  <div class="card-text text-center">
+                    We specialize in seamless office relocation
+                    services.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 cards border-2">
+                <img src="/static/images/packing-moving-image.jpg" class="card-img-top" loading="lazy"
+                  alt="packing-moving image." />
+                <div class="card-body">
+                  <p class="card-title fs-5 text-center">
+                    Packing and Moving
+                  </p>
+                  <div class="card-text text-center">
+                    Our experts ensure safe packing and moving of your
+                    belongings.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 cards border-2">
+                <img src="/static/images/pre-moving-survey-image.jpg" class="card-img-top" loading="lazy"
+                  alt="pre-moving-survey image" />
+                <div class="card-body">
+                  <p class="card-title fs-5 text-center">
+                    Pre-Moving Survey
+                  </p>
+                  <div class="card-text text-center">
+                    We assess your needs and create a customized moving
+                    plan.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 cards border-2">
+                <img src="/static/images/loading-unloading-image.webp" class="card-img-top" loading="lazy"
+                  alt="loading-unloading image" />
+                <div class="card-body">
+                  <p class="card-title fs-5 text-center">
+                    Loading and Unloading
+                  </p>
+                  <div class="card-text text-center">
+                    Efficient loading and unloading services for your
+                    items.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 cards border-2">
+                <img src="/static/images/transportation-image.webp" class="card-img-top" loading="lazy"
+                  alt="transportation image" />
+                <div class="card-body">
+                  <p class="card-title fs-5 text-center">Transportation</p>
+                  <div class="card-text text-center">
+                    Safe and secure transportation of your belongings.
+                  </div>
+                </div>
+              </div>
+            </div>
+            </a>
+          </div>
+        </section>
+        <section>
+          <p>
+            <span class="fw-bold">Packing and Moving:</span> Our expert
+            team handles every aspect of packing and moving. We use
+            top-quality materials to protect your belongings during
+            transit. Your move is our responsibility, and we execute it
+            with precision.
+          </p>
+          <p>
+            <span class="fw-bold">Household Shifting:</span> Moving your
+            household is a big task, and we're here to make it easier.
+            Our professionals ensure that your cherished possessions are
+            safely transported to your new home.
+          </p>
+          <p>
+            <span class="fw-bold">Loading and Unloading:</span> Heavy
+            lifting and careful handling are our specialties. We load
+            and unload your items with care, ensuring a safe journey to
+            your new destination.
+          </p>
+          <p>
+            <span class="fw-bold">Transportation:</span> Our
+            well-maintained fleet of vehicles can accommodate items of
+            all sizes. We provide secure transportation to deliver your
+            belongings to your new location.
+          </p>
+          <p>
+            <span class="fw-bold">Pre-Moving Survey:</span> Our
+            pre-moving survey allows us to understand your unique
+            requirements. We create a customized moving plan tailored to
+            your specific needs.
+          </p>
+          <p>
+            <span class="fw-bold">Office Relocation:</span> Minimize
+            business disruption with our office relocation services. We
+            ensure a smooth transition, allowing you to focus on your
+            business.
+          </p>
+        </section>
+      </section>
+      <section class="container-fluid d-none d-md-block">
+        <div class="card">
+          <img src="/static/images/pexels-rdne-7464473.jpg" class="card-img" alt="happy customers image" loading="lazy">
+          <div class="card-img-overlay p-5 d-flex flex-column justify-content-around">
+            <div id="c-count" class="d-flex flex-row bg-dark p-4">
+              <div class="col text-center text-white">
+                <div class="display-4 fw-bold" id="happyCustomers">
+                  0
+                </div>
+                <p>Happy customers</p>
+              </div>
+              <div class="col text-center text-white">
+                <div class="display-4 fw-bold" id="movesCompleted">
+                  0
+                </div>
+                <p>Moves completed</p>
+              </div>
+              <div class="col text-center text-white">
+                <div class="display-4 fw-bold" id="yearsOfExp">
+                  0
+                </div>
+                <p>Years of experience</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="row container-fluid" id="contactus">
+        <div class=" col-sm-12 col-md-6">
+          <p class="fw fs-2 mb-4 text-start">Contact Us</p>
+          <address>
+            <strong>Divakar Packers and Movers</strong><br>
+            D No. 28-5-587, Housing Board Colony<br>
+            Anantapur, Andhra Pradesh 515001.
+          </address>
+          <p><strong>Email:</strong> divakarpackersandmovers@gmail.com</p>
+          <p><strong>Phone:</strong> +91-9492201243</p>
+        </div>
+        <div class="col-sm-12 col-md-6 text-start">
+          <form action="/submitcform" method="post">
+            <div class="form-group m-2">
+              <label class="mt-2" for="name">Name:</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="form-group m-2">
+              <label class="mt-2" for="phone">Phone:</label>
+              <input type="tel" class="form-control" id="phone" name="phone" required>
+            </div>
+            <div class="form-group m-2">
+              <label class="mt-2" for="email">Email:</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="form-group m-2">
+              <label class="mt-2" for="message">Message:</label>
+              <textarea class="form-control" id="message" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer class="text-center text-lg-start text-dark mt-2" style="background-color: #eceff1">
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2020-2024 Copyright:
+      <a class="text-dark page-links" href="https://divakarpackersandmover.com/">Divakar Packers and Movers</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <script src="{{url_for('static', filename='JS/bootstrap.bundle.min.js')}}"></script>
+</body>
+
+</html>
